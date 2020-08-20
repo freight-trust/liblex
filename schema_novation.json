@@ -1,0 +1,2477 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"action": {
+			"type": "string"
+		},
+		"businessEvent": {
+			"type": "object",
+			"properties": {
+				"effectiveDate": {
+					"type": "object",
+					"properties": {
+						"day": {
+							"type": "integer"
+						},
+						"month": {
+							"type": "integer"
+						},
+						"year": {
+							"type": "integer"
+						}
+					},
+					"required": ["day", "month", "year"]
+				},
+				"eventDate": {
+					"type": "object",
+					"properties": {
+						"day": {
+							"type": "integer"
+						},
+						"month": {
+							"type": "integer"
+						},
+						"year": {
+							"type": "integer"
+						}
+					},
+					"required": ["day", "month", "year"]
+				},
+				"eventQualifier": {
+					"type": "string"
+				},
+				"meta": {
+					"type": "object",
+					"properties": {
+						"globalKey": {
+							"type": "string"
+						}
+					},
+					"required": ["globalKey"]
+				},
+				"primitives": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"contractFormation": {
+									"type": "object",
+									"properties": {
+										"after": {
+											"type": "object",
+											"properties": {
+												"contract": {
+													"type": "object",
+													"properties": {
+														"contractIdentifier": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"assignedIdentifier": {
+																			"type": "array",
+																			"items": [
+																				{
+																					"type": "object",
+																					"properties": {
+																						"identifier": {
+																							"type": "object",
+																							"properties": {
+																								"value": {
+																									"type": "string"
+																								},
+																								"meta": {
+																									"type": "object",
+																									"properties": {
+																										"scheme": {
+																											"type": "string"
+																										}
+																									},
+																									"required": ["scheme"]
+																								}
+																							},
+																							"required": ["value", "meta"]
+																						},
+																						"version": {
+																							"type": "integer"
+																						}
+																					},
+																					"required": ["identifier", "version"]
+																				}
+																			]
+																		},
+																		"issuerReference": {
+																			"type": "object",
+																			"properties": {
+																				"globalReference": {
+																					"type": "string"
+																				},
+																				"externalReference": {
+																					"type": "string"
+																				}
+																			},
+																			"required": [
+																				"globalReference",
+																				"externalReference"
+																			]
+																		},
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		}
+																	},
+																	"required": [
+																		"assignedIdentifier",
+																		"issuerReference",
+																		"meta"
+																	]
+																}
+															]
+														},
+														"documentation": {
+															"type": "object",
+															"properties": {
+																"documentationIdentification": {
+																	"type": "object",
+																	"properties": {
+																		"masterConfirmation": {
+																			"type": "object",
+																			"properties": {
+																				"masterConfirmationDate": {
+																					"type": "object",
+																					"properties": {
+																						"day": {
+																							"type": "integer"
+																						},
+																						"month": {
+																							"type": "integer"
+																						},
+																						"year": {
+																							"type": "integer"
+																						}
+																					},
+																					"required": ["day", "month", "year"]
+																				},
+																				"masterConfirmationType": {
+																					"type": "object",
+																					"properties": {
+																						"value": {
+																							"type": "string"
+																						}
+																					},
+																					"required": ["value"]
+																				}
+																			},
+																			"required": [
+																				"masterConfirmationDate",
+																				"masterConfirmationType"
+																			]
+																		}
+																	},
+																	"required": ["masterConfirmation"]
+																}
+															},
+															"required": ["documentationIdentification"]
+														},
+														"meta": {
+															"type": "object",
+															"properties": {
+																"globalKey": {
+																	"type": "string"
+																}
+															},
+															"required": ["globalKey"]
+														},
+														"tradableProduct": {
+															"type": "object",
+															"properties": {
+																"priceNotation": {
+																	"type": "array",
+																	"items": [
+																		{
+																			"type": "object",
+																			"properties": {
+																				"price": {
+																					"type": "object",
+																					"properties": {
+																						"fixedInterestRate": {
+																							"type": "object",
+																							"properties": {
+																								"rate": {
+																									"type": "number"
+																								}
+																							},
+																							"required": ["rate"]
+																						}
+																					},
+																					"required": ["fixedInterestRate"]
+																				}
+																			},
+																			"required": ["price"]
+																		}
+																	]
+																},
+																"product": {
+																	"type": "object",
+																	"properties": {
+																		"contractualProduct": {
+																			"type": "object",
+																			"properties": {
+																				"economicTerms": {
+																					"type": "object",
+																					"properties": {
+																						"effectiveDate": {
+																							"type": "object",
+																							"properties": {
+																								"adjustableDate": {
+																									"type": "object",
+																									"properties": {
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"globalKey": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["globalKey"]
+																										},
+																										"unadjustedDate": {
+																											"type": "object",
+																											"properties": {
+																												"day": {
+																													"type": "integer"
+																												},
+																												"month": {
+																													"type": "integer"
+																												},
+																												"year": {
+																													"type": "integer"
+																												}
+																											},
+																											"required": [
+																												"day",
+																												"month",
+																												"year"
+																											]
+																										}
+																									},
+																									"required": [
+																										"meta",
+																										"unadjustedDate"
+																									]
+																								},
+																								"meta": {
+																									"type": "object",
+																									"properties": {
+																										"globalKey": {
+																											"type": "string"
+																										}
+																									},
+																									"required": ["globalKey"]
+																								}
+																							},
+																							"required": [
+																								"adjustableDate",
+																								"meta"
+																							]
+																						},
+																						"payout": {
+																							"type": "object",
+																							"properties": {
+																								"creditDefaultPayout": {
+																									"type": "object",
+																									"properties": {
+																										"generalTerms": {
+																											"type": "object",
+																											"properties": {
+																												"buyerSeller": {
+																													"type": "object",
+																													"properties": {
+																														"buyerPartyReference": {
+																															"type": "object",
+																															"properties": {
+																																"globalReference": {
+																																	"type": "string"
+																																},
+																																"externalReference": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalReference",
+																																"externalReference"
+																															]
+																														},
+																														"sellerPartyReference": {
+																															"type": "object",
+																															"properties": {
+																																"globalReference": {
+																																	"type": "string"
+																																},
+																																"externalReference": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalReference",
+																																"externalReference"
+																															]
+																														}
+																													},
+																													"required": [
+																														"buyerPartyReference",
+																														"sellerPartyReference"
+																													]
+																												},
+																												"indexReferenceInformation": {
+																													"type": "object",
+																													"properties": {
+																														"indexAnnexDate": {
+																															"type": "object",
+																															"properties": {
+																																"day": {
+																																	"type": "integer"
+																																},
+																																"month": {
+																																	"type": "integer"
+																																},
+																																"year": {
+																																	"type": "integer"
+																																}
+																															},
+																															"required": [
+																																"day",
+																																"month",
+																																"year"
+																															]
+																														},
+																														"indexAnnexSource": {
+																															"type": "object",
+																															"properties": {
+																																"value": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"value"
+																															]
+																														},
+																														"indexName": {
+																															"type": "object",
+																															"properties": {
+																																"value": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"value"
+																															]
+																														},
+																														"indexSeries": {
+																															"type": "integer"
+																														},
+																														"meta": {
+																															"type": "object",
+																															"properties": {
+																																"globalKey": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalKey"
+																															]
+																														}
+																													},
+																													"required": [
+																														"indexAnnexDate",
+																														"indexAnnexSource",
+																														"indexName",
+																														"indexSeries",
+																														"meta"
+																													]
+																												}
+																											},
+																											"required": [
+																												"buyerSeller",
+																												"indexReferenceInformation"
+																											]
+																										},
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"globalKey": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["globalKey"]
+																										},
+																										"protectionTerms": {
+																											"type": "array",
+																											"items": [
+																												{
+																													"type": "object",
+																													"properties": {
+																														"payoutQuantity": {
+																															"type": "object",
+																															"properties": {
+																																"assetIdentifier": {
+																																	"type": "object",
+																																	"properties": {
+																																		"currency": {
+																																			"type": "object",
+																																			"properties": {
+																																				"value": {
+																																					"type": "string"
+																																				}
+																																			},
+																																			"required": [
+																																				"value"
+																																			]
+																																		}
+																																	},
+																																	"required": [
+																																		"currency"
+																																	]
+																																},
+																																"meta": {
+																																	"type": "object",
+																																	"properties": {
+																																		"globalKey": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"globalKey"
+																																	]
+																																}
+																															},
+																															"required": [
+																																"assetIdentifier",
+																																"meta"
+																															]
+																														},
+																														"meta": {
+																															"type": "object",
+																															"properties": {
+																																"globalKey": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalKey"
+																															]
+																														}
+																													},
+																													"required": [
+																														"payoutQuantity",
+																														"meta"
+																													]
+																												}
+																											]
+																										}
+																									},
+																									"required": [
+																										"generalTerms",
+																										"meta",
+																										"protectionTerms"
+																									]
+																								},
+																								"interestRatePayout": {
+																									"type": "array",
+																									"items": [
+																										{
+																											"type": "object",
+																											"properties": {
+																												"meta": {
+																													"type": "object",
+																													"properties": {
+																														"globalKey": {
+																															"type": "string"
+																														}
+																													},
+																													"required": [
+																														"globalKey"
+																													]
+																												},
+																												"payerReceiver": {
+																													"type": "object",
+																													"properties": {
+																														"payerPartyReference": {
+																															"type": "object",
+																															"properties": {
+																																"globalReference": {
+																																	"type": "string"
+																																},
+																																"externalReference": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalReference",
+																																"externalReference"
+																															]
+																														},
+																														"receiverPartyReference": {
+																															"type": "object",
+																															"properties": {
+																																"globalReference": {
+																																	"type": "string"
+																																},
+																																"externalReference": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalReference",
+																																"externalReference"
+																															]
+																														}
+																													},
+																													"required": [
+																														"payerPartyReference",
+																														"receiverPartyReference"
+																													]
+																												}
+																											},
+																											"required": [
+																												"meta",
+																												"payerReceiver"
+																											]
+																										}
+																									]
+																								}
+																							},
+																							"required": [
+																								"creditDefaultPayout",
+																								"interestRatePayout"
+																							]
+																						},
+																						"terminationDate": {
+																							"type": "object",
+																							"properties": {
+																								"adjustableDate": {
+																									"type": "object",
+																									"properties": {
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"globalKey": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["globalKey"]
+																										},
+																										"unadjustedDate": {
+																											"type": "object",
+																											"properties": {
+																												"day": {
+																													"type": "integer"
+																												},
+																												"month": {
+																													"type": "integer"
+																												},
+																												"year": {
+																													"type": "integer"
+																												}
+																											},
+																											"required": [
+																												"day",
+																												"month",
+																												"year"
+																											]
+																										}
+																									},
+																									"required": [
+																										"meta",
+																										"unadjustedDate"
+																									]
+																								},
+																								"meta": {
+																									"type": "object",
+																									"properties": {
+																										"globalKey": {
+																											"type": "string"
+																										}
+																									},
+																									"required": ["globalKey"]
+																								}
+																							},
+																							"required": [
+																								"adjustableDate",
+																								"meta"
+																							]
+																						}
+																					},
+																					"required": [
+																						"effectiveDate",
+																						"payout",
+																						"terminationDate"
+																					]
+																				},
+																				"productIdentification": {
+																					"type": "object",
+																					"properties": {
+																						"productQualifier": {
+																							"type": "string"
+																						}
+																					},
+																					"required": ["productQualifier"]
+																				}
+																			},
+																			"required": [
+																				"economicTerms",
+																				"productIdentification"
+																			]
+																		},
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		}
+																	},
+																	"required": ["contractualProduct", "meta"]
+																},
+																"quantityNotation": {
+																	"type": "array",
+																	"items": [
+																		{
+																			"type": "object",
+																			"properties": {
+																				"assetIdentifier": {
+																					"type": "object",
+																					"properties": {
+																						"currency": {
+																							"type": "object",
+																							"properties": {
+																								"value": {
+																									"type": "string"
+																								}
+																							},
+																							"required": ["value"]
+																						}
+																					},
+																					"required": ["currency"]
+																				},
+																				"quantity": {
+																					"type": "object",
+																					"properties": {
+																						"amount": {
+																							"type": "integer"
+																						}
+																					},
+																					"required": ["amount"]
+																				}
+																			},
+																			"required": [
+																				"assetIdentifier",
+																				"quantity"
+																			]
+																		}
+																	]
+																}
+															},
+															"required": [
+																"priceNotation",
+																"product",
+																"quantityNotation"
+															]
+														},
+														"tradeDate": {
+															"type": "object",
+															"properties": {
+																"date": {
+																	"type": "object",
+																	"properties": {
+																		"day": {
+																			"type": "integer"
+																		},
+																		"month": {
+																			"type": "integer"
+																		},
+																		"year": {
+																			"type": "integer"
+																		}
+																	},
+																	"required": ["day", "month", "year"]
+																},
+																"meta": {
+																	"type": "object",
+																	"properties": {
+																		"globalKey": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["globalKey"]
+																}
+															},
+															"required": ["date", "meta"]
+														}
+													},
+													"required": [
+														"contractIdentifier",
+														"documentation",
+														"meta",
+														"tradableProduct",
+														"tradeDate"
+													]
+												},
+												"meta": {
+													"type": "object",
+													"properties": {
+														"globalKey": {
+															"type": "string"
+														}
+													},
+													"required": ["globalKey"]
+												}
+											},
+											"required": ["contract", "meta"]
+										}
+									},
+									"required": ["after"]
+								}
+							},
+							"required": ["contractFormation"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"quantityChange": {
+									"type": "object",
+									"properties": {
+										"after": {
+											"type": "object",
+											"properties": {
+												"contract": {
+													"type": "object",
+													"properties": {
+														"closedState": {
+															"type": "object",
+															"properties": {
+																"activityDate": {
+																	"type": "object",
+																	"properties": {
+																		"day": {
+																			"type": "integer"
+																		},
+																		"month": {
+																			"type": "integer"
+																		},
+																		"year": {
+																			"type": "integer"
+																		}
+																	},
+																	"required": ["day", "month", "year"]
+																},
+																"effectiveDate": {
+																	"type": "object",
+																	"properties": {
+																		"day": {
+																			"type": "integer"
+																		},
+																		"month": {
+																			"type": "integer"
+																		},
+																		"year": {
+																			"type": "integer"
+																		}
+																	},
+																	"required": ["day", "month", "year"]
+																},
+																"state": {
+																	"type": "string"
+																}
+															},
+															"required": [
+																"activityDate",
+																"effectiveDate",
+																"state"
+															]
+														},
+														"contractIdentifier": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"assignedIdentifier": {
+																			"type": "array",
+																			"items": [
+																				{
+																					"type": "object",
+																					"properties": {
+																						"identifier": {
+																							"type": "object",
+																							"properties": {
+																								"value": {
+																									"type": "string"
+																								},
+																								"meta": {
+																									"type": "object",
+																									"properties": {
+																										"scheme": {
+																											"type": "string"
+																										}
+																									},
+																									"required": ["scheme"]
+																								}
+																							},
+																							"required": ["value", "meta"]
+																						},
+																						"version": {
+																							"type": "integer"
+																						}
+																					},
+																					"required": ["identifier", "version"]
+																				}
+																			]
+																		},
+																		"issuerReference": {
+																			"type": "object",
+																			"properties": {
+																				"globalReference": {
+																					"type": "string"
+																				},
+																				"externalReference": {
+																					"type": "string"
+																				}
+																			},
+																			"required": [
+																				"globalReference",
+																				"externalReference"
+																			]
+																		},
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		}
+																	},
+																	"required": [
+																		"assignedIdentifier",
+																		"issuerReference",
+																		"meta"
+																	]
+																}
+															]
+														},
+														"documentation": {
+															"type": "object",
+															"properties": {
+																"documentationIdentification": {
+																	"type": "object",
+																	"properties": {
+																		"masterConfirmation": {
+																			"type": "object",
+																			"properties": {
+																				"masterConfirmationDate": {
+																					"type": "object",
+																					"properties": {
+																						"day": {
+																							"type": "integer"
+																						},
+																						"month": {
+																							"type": "integer"
+																						},
+																						"year": {
+																							"type": "integer"
+																						}
+																					},
+																					"required": ["day", "month", "year"]
+																				},
+																				"masterConfirmationType": {
+																					"type": "object",
+																					"properties": {
+																						"value": {
+																							"type": "string"
+																						}
+																					},
+																					"required": ["value"]
+																				}
+																			},
+																			"required": [
+																				"masterConfirmationDate",
+																				"masterConfirmationType"
+																			]
+																		}
+																	},
+																	"required": ["masterConfirmation"]
+																}
+															},
+															"required": ["documentationIdentification"]
+														},
+														"meta": {
+															"type": "object",
+															"properties": {
+																"globalKey": {
+																	"type": "string"
+																}
+															},
+															"required": ["globalKey"]
+														},
+														"tradableProduct": {
+															"type": "object",
+															"properties": {
+																"priceNotation": {
+																	"type": "array",
+																	"items": [
+																		{
+																			"type": "object",
+																			"properties": {
+																				"price": {
+																					"type": "object",
+																					"properties": {
+																						"fixedInterestRate": {
+																							"type": "object",
+																							"properties": {
+																								"rate": {
+																									"type": "number"
+																								}
+																							},
+																							"required": ["rate"]
+																						}
+																					},
+																					"required": ["fixedInterestRate"]
+																				}
+																			},
+																			"required": ["price"]
+																		}
+																	]
+																},
+																"product": {
+																	"type": "object",
+																	"properties": {
+																		"contractualProduct": {
+																			"type": "object",
+																			"properties": {
+																				"economicTerms": {
+																					"type": "object",
+																					"properties": {
+																						"effectiveDate": {
+																							"type": "object",
+																							"properties": {
+																								"adjustableDate": {
+																									"type": "object",
+																									"properties": {
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"globalKey": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["globalKey"]
+																										},
+																										"unadjustedDate": {
+																											"type": "object",
+																											"properties": {
+																												"day": {
+																													"type": "integer"
+																												},
+																												"month": {
+																													"type": "integer"
+																												},
+																												"year": {
+																													"type": "integer"
+																												}
+																											},
+																											"required": [
+																												"day",
+																												"month",
+																												"year"
+																											]
+																										}
+																									},
+																									"required": [
+																										"meta",
+																										"unadjustedDate"
+																									]
+																								},
+																								"meta": {
+																									"type": "object",
+																									"properties": {
+																										"globalKey": {
+																											"type": "string"
+																										}
+																									},
+																									"required": ["globalKey"]
+																								}
+																							},
+																							"required": [
+																								"adjustableDate",
+																								"meta"
+																							]
+																						},
+																						"payout": {
+																							"type": "object",
+																							"properties": {
+																								"creditDefaultPayout": {
+																									"type": "object",
+																									"properties": {
+																										"generalTerms": {
+																											"type": "object",
+																											"properties": {
+																												"buyerSeller": {
+																													"type": "object",
+																													"properties": {
+																														"buyerPartyReference": {
+																															"type": "object",
+																															"properties": {
+																																"globalReference": {
+																																	"type": "string"
+																																},
+																																"externalReference": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalReference",
+																																"externalReference"
+																															]
+																														},
+																														"sellerPartyReference": {
+																															"type": "object",
+																															"properties": {
+																																"globalReference": {
+																																	"type": "string"
+																																},
+																																"externalReference": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalReference",
+																																"externalReference"
+																															]
+																														}
+																													},
+																													"required": [
+																														"buyerPartyReference",
+																														"sellerPartyReference"
+																													]
+																												},
+																												"indexReferenceInformation": {
+																													"type": "object",
+																													"properties": {
+																														"indexAnnexDate": {
+																															"type": "object",
+																															"properties": {
+																																"day": {
+																																	"type": "integer"
+																																},
+																																"month": {
+																																	"type": "integer"
+																																},
+																																"year": {
+																																	"type": "integer"
+																																}
+																															},
+																															"required": [
+																																"day",
+																																"month",
+																																"year"
+																															]
+																														},
+																														"indexAnnexSource": {
+																															"type": "object",
+																															"properties": {
+																																"value": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"value"
+																															]
+																														},
+																														"indexName": {
+																															"type": "object",
+																															"properties": {
+																																"value": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"value"
+																															]
+																														},
+																														"indexSeries": {
+																															"type": "integer"
+																														},
+																														"meta": {
+																															"type": "object",
+																															"properties": {
+																																"globalKey": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalKey"
+																															]
+																														}
+																													},
+																													"required": [
+																														"indexAnnexDate",
+																														"indexAnnexSource",
+																														"indexName",
+																														"indexSeries",
+																														"meta"
+																													]
+																												}
+																											},
+																											"required": [
+																												"buyerSeller",
+																												"indexReferenceInformation"
+																											]
+																										},
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"globalKey": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["globalKey"]
+																										},
+																										"protectionTerms": {
+																											"type": "array",
+																											"items": [
+																												{
+																													"type": "object",
+																													"properties": {
+																														"payoutQuantity": {
+																															"type": "object",
+																															"properties": {
+																																"assetIdentifier": {
+																																	"type": "object",
+																																	"properties": {
+																																		"currency": {
+																																			"type": "object",
+																																			"properties": {
+																																				"value": {
+																																					"type": "string"
+																																				}
+																																			},
+																																			"required": [
+																																				"value"
+																																			]
+																																		}
+																																	},
+																																	"required": [
+																																		"currency"
+																																	]
+																																},
+																																"meta": {
+																																	"type": "object",
+																																	"properties": {
+																																		"globalKey": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"globalKey"
+																																	]
+																																}
+																															},
+																															"required": [
+																																"assetIdentifier",
+																																"meta"
+																															]
+																														},
+																														"meta": {
+																															"type": "object",
+																															"properties": {
+																																"globalKey": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalKey"
+																															]
+																														}
+																													},
+																													"required": [
+																														"payoutQuantity",
+																														"meta"
+																													]
+																												}
+																											]
+																										}
+																									},
+																									"required": [
+																										"generalTerms",
+																										"meta",
+																										"protectionTerms"
+																									]
+																								},
+																								"interestRatePayout": {
+																									"type": "array",
+																									"items": [
+																										{
+																											"type": "object",
+																											"properties": {
+																												"meta": {
+																													"type": "object",
+																													"properties": {
+																														"globalKey": {
+																															"type": "string"
+																														}
+																													},
+																													"required": [
+																														"globalKey"
+																													]
+																												},
+																												"payerReceiver": {
+																													"type": "object",
+																													"properties": {
+																														"payerPartyReference": {
+																															"type": "object",
+																															"properties": {
+																																"globalReference": {
+																																	"type": "string"
+																																},
+																																"externalReference": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalReference",
+																																"externalReference"
+																															]
+																														},
+																														"receiverPartyReference": {
+																															"type": "object",
+																															"properties": {
+																																"globalReference": {
+																																	"type": "string"
+																																},
+																																"externalReference": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalReference",
+																																"externalReference"
+																															]
+																														}
+																													},
+																													"required": [
+																														"payerPartyReference",
+																														"receiverPartyReference"
+																													]
+																												}
+																											},
+																											"required": [
+																												"meta",
+																												"payerReceiver"
+																											]
+																										}
+																									]
+																								}
+																							},
+																							"required": [
+																								"creditDefaultPayout",
+																								"interestRatePayout"
+																							]
+																						},
+																						"terminationDate": {
+																							"type": "object",
+																							"properties": {
+																								"adjustableDate": {
+																									"type": "object",
+																									"properties": {
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"globalKey": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["globalKey"]
+																										},
+																										"unadjustedDate": {
+																											"type": "object",
+																											"properties": {
+																												"day": {
+																													"type": "integer"
+																												},
+																												"month": {
+																													"type": "integer"
+																												},
+																												"year": {
+																													"type": "integer"
+																												}
+																											},
+																											"required": [
+																												"day",
+																												"month",
+																												"year"
+																											]
+																										}
+																									},
+																									"required": [
+																										"meta",
+																										"unadjustedDate"
+																									]
+																								},
+																								"meta": {
+																									"type": "object",
+																									"properties": {
+																										"globalKey": {
+																											"type": "string"
+																										}
+																									},
+																									"required": ["globalKey"]
+																								}
+																							},
+																							"required": [
+																								"adjustableDate",
+																								"meta"
+																							]
+																						}
+																					},
+																					"required": [
+																						"effectiveDate",
+																						"payout",
+																						"terminationDate"
+																					]
+																				},
+																				"productIdentification": {
+																					"type": "object",
+																					"properties": {
+																						"productQualifier": {
+																							"type": "string"
+																						}
+																					},
+																					"required": ["productQualifier"]
+																				}
+																			},
+																			"required": [
+																				"economicTerms",
+																				"productIdentification"
+																			]
+																		},
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		}
+																	},
+																	"required": ["contractualProduct", "meta"]
+																},
+																"quantityNotation": {
+																	"type": "array",
+																	"items": [
+																		{
+																			"type": "object",
+																			"properties": {
+																				"assetIdentifier": {
+																					"type": "object",
+																					"properties": {
+																						"currency": {
+																							"type": "object",
+																							"properties": {
+																								"value": {
+																									"type": "string"
+																								}
+																							},
+																							"required": ["value"]
+																						}
+																					},
+																					"required": ["currency"]
+																				},
+																				"quantity": {
+																					"type": "object",
+																					"properties": {
+																						"amount": {
+																							"type": "integer"
+																						}
+																					},
+																					"required": ["amount"]
+																				}
+																			},
+																			"required": [
+																				"assetIdentifier",
+																				"quantity"
+																			]
+																		}
+																	]
+																}
+															},
+															"required": [
+																"priceNotation",
+																"product",
+																"quantityNotation"
+															]
+														},
+														"tradeDate": {
+															"type": "object",
+															"properties": {
+																"date": {
+																	"type": "object",
+																	"properties": {
+																		"day": {
+																			"type": "integer"
+																		},
+																		"month": {
+																			"type": "integer"
+																		},
+																		"year": {
+																			"type": "integer"
+																		}
+																	},
+																	"required": ["day", "month", "year"]
+																},
+																"meta": {
+																	"type": "object",
+																	"properties": {
+																		"globalKey": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["globalKey"]
+																}
+															},
+															"required": ["date", "meta"]
+														}
+													},
+													"required": [
+														"closedState",
+														"contractIdentifier",
+														"documentation",
+														"meta",
+														"tradableProduct",
+														"tradeDate"
+													]
+												},
+												"meta": {
+													"type": "object",
+													"properties": {
+														"globalKey": {
+															"type": "string"
+														}
+													},
+													"required": ["globalKey"]
+												}
+											},
+											"required": ["contract", "meta"]
+										},
+										"before": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "object",
+													"properties": {
+														"contract": {
+															"type": "object",
+															"properties": {
+																"contractIdentifier": {
+																	"type": "array",
+																	"items": [
+																		{
+																			"type": "object",
+																			"properties": {
+																				"assignedIdentifier": {
+																					"type": "array",
+																					"items": [
+																						{
+																							"type": "object",
+																							"properties": {
+																								"identifier": {
+																									"type": "object",
+																									"properties": {
+																										"value": {
+																											"type": "string"
+																										},
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"scheme": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["scheme"]
+																										}
+																									},
+																									"required": ["value", "meta"]
+																								},
+																								"version": {
+																									"type": "integer"
+																								}
+																							},
+																							"required": [
+																								"identifier",
+																								"version"
+																							]
+																						}
+																					]
+																				},
+																				"issuerReference": {
+																					"type": "object",
+																					"properties": {
+																						"globalReference": {
+																							"type": "string"
+																						},
+																						"externalReference": {
+																							"type": "string"
+																						}
+																					},
+																					"required": [
+																						"globalReference",
+																						"externalReference"
+																					]
+																				},
+																				"meta": {
+																					"type": "object",
+																					"properties": {
+																						"globalKey": {
+																							"type": "string"
+																						}
+																					},
+																					"required": ["globalKey"]
+																				}
+																			},
+																			"required": [
+																				"assignedIdentifier",
+																				"issuerReference",
+																				"meta"
+																			]
+																		}
+																	]
+																},
+																"documentation": {
+																	"type": "object",
+																	"properties": {
+																		"documentationIdentification": {
+																			"type": "object",
+																			"properties": {
+																				"masterConfirmation": {
+																					"type": "object",
+																					"properties": {
+																						"masterConfirmationDate": {
+																							"type": "object",
+																							"properties": {
+																								"day": {
+																									"type": "integer"
+																								},
+																								"month": {
+																									"type": "integer"
+																								},
+																								"year": {
+																									"type": "integer"
+																								}
+																							},
+																							"required": [
+																								"day",
+																								"month",
+																								"year"
+																							]
+																						},
+																						"masterConfirmationType": {
+																							"type": "object",
+																							"properties": {
+																								"value": {
+																									"type": "string"
+																								}
+																							},
+																							"required": ["value"]
+																						}
+																					},
+																					"required": [
+																						"masterConfirmationDate",
+																						"masterConfirmationType"
+																					]
+																				}
+																			},
+																			"required": ["masterConfirmation"]
+																		}
+																	},
+																	"required": ["documentationIdentification"]
+																},
+																"meta": {
+																	"type": "object",
+																	"properties": {
+																		"globalKey": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["globalKey"]
+																},
+																"tradableProduct": {
+																	"type": "object",
+																	"properties": {
+																		"priceNotation": {
+																			"type": "array",
+																			"items": [
+																				{
+																					"type": "object",
+																					"properties": {
+																						"price": {
+																							"type": "object",
+																							"properties": {
+																								"fixedInterestRate": {
+																									"type": "object",
+																									"properties": {
+																										"rate": {
+																											"type": "number"
+																										}
+																									},
+																									"required": ["rate"]
+																								}
+																							},
+																							"required": ["fixedInterestRate"]
+																						}
+																					},
+																					"required": ["price"]
+																				}
+																			]
+																		},
+																		"product": {
+																			"type": "object",
+																			"properties": {
+																				"contractualProduct": {
+																					"type": "object",
+																					"properties": {
+																						"economicTerms": {
+																							"type": "object",
+																							"properties": {
+																								"effectiveDate": {
+																									"type": "object",
+																									"properties": {
+																										"adjustableDate": {
+																											"type": "object",
+																											"properties": {
+																												"meta": {
+																													"type": "object",
+																													"properties": {
+																														"globalKey": {
+																															"type": "string"
+																														}
+																													},
+																													"required": [
+																														"globalKey"
+																													]
+																												},
+																												"unadjustedDate": {
+																													"type": "object",
+																													"properties": {
+																														"day": {
+																															"type": "integer"
+																														},
+																														"month": {
+																															"type": "integer"
+																														},
+																														"year": {
+																															"type": "integer"
+																														}
+																													},
+																													"required": [
+																														"day",
+																														"month",
+																														"year"
+																													]
+																												}
+																											},
+																											"required": [
+																												"meta",
+																												"unadjustedDate"
+																											]
+																										},
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"globalKey": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["globalKey"]
+																										}
+																									},
+																									"required": [
+																										"adjustableDate",
+																										"meta"
+																									]
+																								},
+																								"payout": {
+																									"type": "object",
+																									"properties": {
+																										"creditDefaultPayout": {
+																											"type": "object",
+																											"properties": {
+																												"generalTerms": {
+																													"type": "object",
+																													"properties": {
+																														"buyerSeller": {
+																															"type": "object",
+																															"properties": {
+																																"buyerPartyReference": {
+																																	"type": "object",
+																																	"properties": {
+																																		"globalReference": {
+																																			"type": "string"
+																																		},
+																																		"externalReference": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"globalReference",
+																																		"externalReference"
+																																	]
+																																},
+																																"sellerPartyReference": {
+																																	"type": "object",
+																																	"properties": {
+																																		"globalReference": {
+																																			"type": "string"
+																																		},
+																																		"externalReference": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"globalReference",
+																																		"externalReference"
+																																	]
+																																}
+																															},
+																															"required": [
+																																"buyerPartyReference",
+																																"sellerPartyReference"
+																															]
+																														},
+																														"indexReferenceInformation": {
+																															"type": "object",
+																															"properties": {
+																																"indexAnnexDate": {
+																																	"type": "object",
+																																	"properties": {
+																																		"day": {
+																																			"type": "integer"
+																																		},
+																																		"month": {
+																																			"type": "integer"
+																																		},
+																																		"year": {
+																																			"type": "integer"
+																																		}
+																																	},
+																																	"required": [
+																																		"day",
+																																		"month",
+																																		"year"
+																																	]
+																																},
+																																"indexAnnexSource": {
+																																	"type": "object",
+																																	"properties": {
+																																		"value": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"value"
+																																	]
+																																},
+																																"indexName": {
+																																	"type": "object",
+																																	"properties": {
+																																		"value": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"value"
+																																	]
+																																},
+																																"indexSeries": {
+																																	"type": "integer"
+																																},
+																																"meta": {
+																																	"type": "object",
+																																	"properties": {
+																																		"globalKey": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"globalKey"
+																																	]
+																																}
+																															},
+																															"required": [
+																																"indexAnnexDate",
+																																"indexAnnexSource",
+																																"indexName",
+																																"indexSeries",
+																																"meta"
+																															]
+																														}
+																													},
+																													"required": [
+																														"buyerSeller",
+																														"indexReferenceInformation"
+																													]
+																												},
+																												"meta": {
+																													"type": "object",
+																													"properties": {
+																														"globalKey": {
+																															"type": "string"
+																														}
+																													},
+																													"required": [
+																														"globalKey"
+																													]
+																												},
+																												"protectionTerms": {
+																													"type": "array",
+																													"items": [
+																														{
+																															"type": "object",
+																															"properties": {
+																																"payoutQuantity": {
+																																	"type": "object",
+																																	"properties": {
+																																		"assetIdentifier": {
+																																			"type": "object",
+																																			"properties": {
+																																				"currency": {
+																																					"type": "object",
+																																					"properties": {
+																																						"value": {
+																																							"type": "string"
+																																						}
+																																					},
+																																					"required": [
+																																						"value"
+																																					]
+																																				}
+																																			},
+																																			"required": [
+																																				"currency"
+																																			]
+																																		},
+																																		"meta": {
+																																			"type": "object",
+																																			"properties": {
+																																				"globalKey": {
+																																					"type": "string"
+																																				}
+																																			},
+																																			"required": [
+																																				"globalKey"
+																																			]
+																																		}
+																																	},
+																																	"required": [
+																																		"assetIdentifier",
+																																		"meta"
+																																	]
+																																},
+																																"meta": {
+																																	"type": "object",
+																																	"properties": {
+																																		"globalKey": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"globalKey"
+																																	]
+																																}
+																															},
+																															"required": [
+																																"payoutQuantity",
+																																"meta"
+																															]
+																														}
+																													]
+																												}
+																											},
+																											"required": [
+																												"generalTerms",
+																												"meta",
+																												"protectionTerms"
+																											]
+																										},
+																										"interestRatePayout": {
+																											"type": "array",
+																											"items": [
+																												{
+																													"type": "object",
+																													"properties": {
+																														"meta": {
+																															"type": "object",
+																															"properties": {
+																																"globalKey": {
+																																	"type": "string"
+																																}
+																															},
+																															"required": [
+																																"globalKey"
+																															]
+																														},
+																														"payerReceiver": {
+																															"type": "object",
+																															"properties": {
+																																"payerPartyReference": {
+																																	"type": "object",
+																																	"properties": {
+																																		"globalReference": {
+																																			"type": "string"
+																																		},
+																																		"externalReference": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"globalReference",
+																																		"externalReference"
+																																	]
+																																},
+																																"receiverPartyReference": {
+																																	"type": "object",
+																																	"properties": {
+																																		"globalReference": {
+																																			"type": "string"
+																																		},
+																																		"externalReference": {
+																																			"type": "string"
+																																		}
+																																	},
+																																	"required": [
+																																		"globalReference",
+																																		"externalReference"
+																																	]
+																																}
+																															},
+																															"required": [
+																																"payerPartyReference",
+																																"receiverPartyReference"
+																															]
+																														}
+																													},
+																													"required": [
+																														"meta",
+																														"payerReceiver"
+																													]
+																												}
+																											]
+																										}
+																									},
+																									"required": [
+																										"creditDefaultPayout",
+																										"interestRatePayout"
+																									]
+																								},
+																								"terminationDate": {
+																									"type": "object",
+																									"properties": {
+																										"adjustableDate": {
+																											"type": "object",
+																											"properties": {
+																												"meta": {
+																													"type": "object",
+																													"properties": {
+																														"globalKey": {
+																															"type": "string"
+																														}
+																													},
+																													"required": [
+																														"globalKey"
+																													]
+																												},
+																												"unadjustedDate": {
+																													"type": "object",
+																													"properties": {
+																														"day": {
+																															"type": "integer"
+																														},
+																														"month": {
+																															"type": "integer"
+																														},
+																														"year": {
+																															"type": "integer"
+																														}
+																													},
+																													"required": [
+																														"day",
+																														"month",
+																														"year"
+																													]
+																												}
+																											},
+																											"required": [
+																												"meta",
+																												"unadjustedDate"
+																											]
+																										},
+																										"meta": {
+																											"type": "object",
+																											"properties": {
+																												"globalKey": {
+																													"type": "string"
+																												}
+																											},
+																											"required": ["globalKey"]
+																										}
+																									},
+																									"required": [
+																										"adjustableDate",
+																										"meta"
+																									]
+																								}
+																							},
+																							"required": [
+																								"effectiveDate",
+																								"payout",
+																								"terminationDate"
+																							]
+																						},
+																						"productIdentification": {
+																							"type": "object",
+																							"properties": {
+																								"productQualifier": {
+																									"type": "string"
+																								}
+																							},
+																							"required": ["productQualifier"]
+																						}
+																					},
+																					"required": [
+																						"economicTerms",
+																						"productIdentification"
+																					]
+																				},
+																				"meta": {
+																					"type": "object",
+																					"properties": {
+																						"globalKey": {
+																							"type": "string"
+																						}
+																					},
+																					"required": ["globalKey"]
+																				}
+																			},
+																			"required": ["contractualProduct", "meta"]
+																		},
+																		"quantityNotation": {
+																			"type": "array",
+																			"items": [
+																				{
+																					"type": "object",
+																					"properties": {
+																						"assetIdentifier": {
+																							"type": "object",
+																							"properties": {
+																								"currency": {
+																									"type": "object",
+																									"properties": {
+																										"value": {
+																											"type": "string"
+																										}
+																									},
+																									"required": ["value"]
+																								}
+																							},
+																							"required": ["currency"]
+																						},
+																						"quantity": {
+																							"type": "object",
+																							"properties": {
+																								"amount": {
+																									"type": "integer"
+																								}
+																							},
+																							"required": ["amount"]
+																						}
+																					},
+																					"required": [
+																						"assetIdentifier",
+																						"quantity"
+																					]
+																				}
+																			]
+																		}
+																	},
+																	"required": [
+																		"priceNotation",
+																		"product",
+																		"quantityNotation"
+																	]
+																},
+																"tradeDate": {
+																	"type": "object",
+																	"properties": {
+																		"date": {
+																			"type": "object",
+																			"properties": {
+																				"day": {
+																					"type": "integer"
+																				},
+																				"month": {
+																					"type": "integer"
+																				},
+																				"year": {
+																					"type": "integer"
+																				}
+																			},
+																			"required": ["day", "month", "year"]
+																		},
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		}
+																	},
+																	"required": ["date", "meta"]
+																}
+															},
+															"required": [
+																"contractIdentifier",
+																"documentation",
+																"meta",
+																"tradableProduct",
+																"tradeDate"
+															]
+														},
+														"meta": {
+															"type": "object",
+															"properties": {
+																"globalKey": {
+																	"type": "string"
+																}
+															},
+															"required": ["globalKey"]
+														}
+													},
+													"required": ["contract", "meta"]
+												}
+											},
+											"required": ["value"]
+										}
+									},
+									"required": ["after", "before"]
+								}
+							},
+							"required": ["quantityChange"]
+						}
+					]
+				}
+			},
+			"required": [
+				"effectiveDate",
+				"eventDate",
+				"eventQualifier",
+				"meta",
+				"primitives"
+			]
+		},
+		"eventIdentifier": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"assignedIdentifier": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"identifier": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										},
+										"version": {
+											"type": "integer"
+										}
+									},
+									"required": ["identifier", "version"]
+								}
+							]
+						},
+						"issuerReference": {
+							"type": "object",
+							"properties": {
+								"globalReference": {
+									"type": "string"
+								},
+								"externalReference": {
+									"type": "string"
+								}
+							},
+							"required": ["globalReference", "externalReference"]
+						},
+						"meta": {
+							"type": "object",
+							"properties": {
+								"globalKey": {
+									"type": "string"
+								}
+							},
+							"required": ["globalKey"]
+						}
+					},
+					"required": ["assignedIdentifier", "issuerReference", "meta"]
+				}
+			]
+		},
+		"lineage": {
+			"type": "object",
+			"properties": {
+				"eventReference": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"globalReference": {
+									"type": "string"
+								},
+								"externalReference": {
+									"type": "string"
+								}
+							},
+							"required": ["globalReference", "externalReference"]
+						}
+					]
+				}
+			},
+			"required": ["eventReference"]
+		},
+		"meta": {
+			"type": "object",
+			"properties": {
+				"globalKey": {
+					"type": "string"
+				}
+			},
+			"required": ["globalKey"]
+		},
+		"party": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"meta": {
+							"type": "object",
+							"properties": {
+								"globalKey": {
+									"type": "string"
+								},
+								"externalKey": {
+									"type": "string"
+								}
+							},
+							"required": ["globalKey", "externalKey"]
+						},
+						"partyId": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"scheme": {
+													"type": "string"
+												}
+											},
+											"required": ["scheme"]
+										}
+									},
+									"required": ["value", "meta"]
+								}
+							]
+						}
+					},
+					"required": ["meta", "partyId"]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"meta": {
+							"type": "object",
+							"properties": {
+								"globalKey": {
+									"type": "string"
+								},
+								"externalKey": {
+									"type": "string"
+								}
+							},
+							"required": ["globalKey", "externalKey"]
+						},
+						"partyId": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"scheme": {
+													"type": "string"
+												}
+											},
+											"required": ["scheme"]
+										}
+									},
+									"required": ["value", "meta"]
+								}
+							]
+						}
+					},
+					"required": ["meta", "partyId"]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"meta": {
+							"type": "object",
+							"properties": {
+								"globalKey": {
+									"type": "string"
+								},
+								"externalKey": {
+									"type": "string"
+								}
+							},
+							"required": ["globalKey", "externalKey"]
+						},
+						"partyId": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"scheme": {
+													"type": "string"
+												}
+											},
+											"required": ["scheme"]
+										}
+									},
+									"required": ["value", "meta"]
+								}
+							]
+						}
+					},
+					"required": ["meta", "partyId"]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"meta": {
+							"type": "object",
+							"properties": {
+								"globalKey": {
+									"type": "string"
+								},
+								"externalKey": {
+									"type": "string"
+								}
+							},
+							"required": ["globalKey", "externalKey"]
+						},
+						"partyId": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"scheme": {
+													"type": "string"
+												}
+											},
+											"required": ["scheme"]
+										}
+									},
+									"required": ["value", "meta"]
+								}
+							]
+						}
+					},
+					"required": ["meta", "partyId"]
+				}
+			]
+		},
+		"timestamp": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"dateTime": {
+							"type": "string"
+						},
+						"qualification": {
+							"type": "string"
+						}
+					},
+					"required": ["dateTime", "qualification"]
+				}
+			]
+		}
+	},
+	"required": [
+		"action",
+		"businessEvent",
+		"eventIdentifier",
+		"lineage",
+		"meta",
+		"party",
+		"timestamp"
+	]
+}

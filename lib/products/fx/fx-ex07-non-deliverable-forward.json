@@ -1,0 +1,255 @@
+{
+	"contractIdentifier": [
+		{
+			"assignedIdentifier": [
+				{
+					"identifier": {
+						"value": "PARTYA345",
+						"meta": {
+							"scheme": "http://www.partyA.com/fx/trade-id"
+						}
+					}
+				}
+			],
+			"issuerReference": {
+				"globalReference": "5d3cc671",
+				"externalReference": "party1"
+			},
+			"meta": {
+				"globalKey": "f7c88f99"
+			}
+		},
+		{
+			"assignedIdentifier": [
+				{
+					"identifier": {
+						"value": "CSFB9842",
+						"meta": {
+							"scheme": "http://www.csfb.com/fx/trade-id"
+						}
+					}
+				}
+			],
+			"issuerReference": {
+				"globalReference": "d0b38214",
+				"externalReference": "party2"
+			},
+			"meta": {
+				"globalKey": "70c7e2c9"
+			}
+		}
+	],
+	"meta": {
+		"globalKey": "7cf1bff0"
+	},
+	"party": [
+		{
+			"meta": {
+				"globalKey": "5d3cc671",
+				"externalKey": "party1"
+			},
+			"partyId": [
+				{
+					"value": "549300VBWWV6BYQOWM67",
+					"meta": {
+						"scheme": "http://www.fpml.org/coding-scheme/external/iso17442"
+					}
+				}
+			]
+		},
+		{
+			"meta": {
+				"globalKey": "d0b38214",
+				"externalKey": "party2"
+			},
+			"partyId": [
+				{
+					"value": "391200ZGI3FROE0WYF22",
+					"meta": {
+						"scheme": "http://www.fpml.org/coding-scheme/external/iso17442"
+					}
+				}
+			]
+		}
+	],
+	"tradableProduct": {
+		"priceNotation": [
+			{
+				"price": {
+					"exchangeRate": {
+						"forwardPoints": 0.05,
+						"quotedCurrencyPair": {
+							"currency1": {
+								"value": "USD"
+							},
+							"currency2": {
+								"value": "INR"
+							},
+							"quoteBasis": "CURRENCY_2_PER_CURRENCY_1"
+						},
+						"rate": 43.4,
+						"spotRate": 43.35
+					}
+				}
+			}
+		],
+		"product": {
+			"contractualProduct": {
+				"economicTerms": {
+					"payout": {
+						"forwardPayout": [
+							{
+								"settlementTerms": {
+									"meta": {
+										"globalKey": "e284520e"
+									},
+									"valueDate": {
+										"day": 11,
+										"month": 4,
+										"year": 2002
+									},
+									"fxSettlementTerms": {
+										"fixing": [
+											{
+												"fixingDate": {
+													"day": 9,
+													"month": 4,
+													"year": 2002
+												},
+												"fxSpotRateSource": {
+													"fixingTime": {
+														"businessCenter": {
+															"value": "INMU"
+														},
+														"hourMinuteTime": "14:30:00"
+													},
+													"primaryRateSource": {
+														"sourcePage": {
+															"value": "RBIB"
+														},
+														"sourceProvider": {
+															"value": "REUTERS"
+														}
+													}
+												},
+												"quotedCurrencyPair": {
+													"currency1": {
+														"value": "USD"
+													},
+													"currency2": {
+														"value": "INR"
+													},
+													"quoteBasis": "CURRENCY_2_PER_CURRENCY_1"
+												}
+											}
+										],
+										"settlementCurrency": {
+											"value": "USD"
+										}
+									}
+								},
+								"underlier": {
+									"underlyingProduct": {
+										"foreignExchange": {
+											"exchangedCurrency1": {
+												"payoutQuantity": {
+													"assetIdentifier": {
+														"currency": {
+															"value": "USD"
+														}
+													},
+													"meta": {
+														"globalKey": "14966"
+													}
+												},
+												"meta": {
+													"globalKey": "1872a65a"
+												},
+												"payerReceiver": {
+													"payerPartyReference": {
+														"globalReference": "d0b38214",
+														"externalReference": "party2"
+													},
+													"receiverPartyReference": {
+														"globalReference": "5d3cc671",
+														"externalReference": "party1"
+													}
+												}
+											},
+											"exchangedCurrency2": {
+												"payoutQuantity": {
+													"assetIdentifier": {
+														"currency": {
+															"value": "INR"
+														}
+													},
+													"meta": {
+														"globalKey": "11bcd"
+													}
+												},
+												"meta": {
+													"globalKey": "49493c53"
+												},
+												"payerReceiver": {
+													"payerPartyReference": {
+														"globalReference": "5d3cc671",
+														"externalReference": "party1"
+													},
+													"receiverPartyReference": {
+														"globalReference": "d0b38214",
+														"externalReference": "party2"
+													}
+												}
+											}
+										},
+										"meta": {
+											"globalKey": "9f8b3a2d"
+										}
+									}
+								}
+							}
+						]
+					}
+				},
+				"productIdentification": {
+					"productQualifier": "ForeignExchange_NDF"
+				}
+			},
+			"meta": {
+				"globalKey": "d2bbfca7"
+			}
+		},
+		"quantityNotation": [
+			{
+				"assetIdentifier": {
+					"currency": {
+						"value": "USD"
+					}
+				},
+				"quantity": {
+					"amount": 10000000
+				}
+			},
+			{
+				"assetIdentifier": {
+					"currency": {
+						"value": "INR"
+					}
+				},
+				"quantity": {
+					"amount": 434000000
+				}
+			}
+		]
+	},
+	"tradeDate": {
+		"date": {
+			"day": 9,
+			"month": 1,
+			"year": 2002
+		},
+		"meta": {
+			"globalKey": "3e9049"
+		}
+	}
+}

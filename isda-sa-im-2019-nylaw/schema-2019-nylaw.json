@@ -1,0 +1,1049 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"partyA": {
+			"type": "object",
+			"properties": {
+				"entity": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						}
+					},
+					"required": ["id", "name"]
+				},
+				"account": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						},
+						"domains": {
+							"type": "array",
+							"items": [
+								{
+									"type": "string"
+								}
+							]
+						}
+					},
+					"required": ["id", "name", "domains"]
+				}
+			},
+			"required": ["entity", "account"]
+		},
+		"partyB": {
+			"type": "object",
+			"properties": {
+				"entity": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						},
+						"lei": {
+							"type": "string"
+						}
+					},
+					"required": ["id", "name", "lei"]
+				},
+				"account": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						},
+						"domains": {
+							"type": "array",
+							"items": [
+								{
+									"type": "string"
+								}
+							]
+						}
+					},
+					"required": ["id", "name", "domains"]
+				}
+			},
+			"required": ["entity", "account"]
+		},
+		"participants": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"firstName": {
+							"type": "string"
+						},
+						"lastName": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						}
+					},
+					"required": ["id", "firstName", "lastName", "email"]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"firstName": {
+							"type": "string"
+						},
+						"lastName": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						}
+					},
+					"required": ["id", "firstName", "lastName", "email"]
+				}
+			]
+		},
+		"preset": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			},
+			"required": ["name"]
+		},
+		"document": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"year": {
+					"type": "integer"
+				},
+				"documentType": {
+					"type": "string"
+				},
+				"governingLaw": {
+					"type": "string"
+				},
+				"abbreviation": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				},
+				"publisher": {
+					"type": "string"
+				},
+				"dateAdded": {
+					"type": "string"
+				},
+				"hasSchema": {
+					"type": "boolean"
+				},
+				"version": {
+					"type": "string"
+				},
+				"supportedExtensions": {
+					"type": "array",
+					"items": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "string"
+						}
+					]
+				},
+				"referenceFilesExtensions": {
+					"type": "array",
+					"items": {}
+				},
+				"supportsOfflineNegotiations": {
+					"type": "boolean"
+				},
+				"workflowType": {
+					"type": "string"
+				},
+				"availableActions": {
+					"type": "object",
+					"properties": {
+						"createPreset": {
+							"type": "boolean"
+						},
+						"createInvite": {
+							"type": "boolean"
+						},
+						"swapParties": {
+							"type": "boolean"
+						}
+					},
+					"required": ["createPreset", "createInvite", "swapParties"]
+				}
+			},
+			"required": [
+				"id",
+				"state",
+				"year",
+				"documentType",
+				"governingLaw",
+				"abbreviation",
+				"description",
+				"publisher",
+				"dateAdded",
+				"hasSchema",
+				"version",
+				"supportedExtensions",
+				"referenceFilesExtensions",
+				"supportsOfflineNegotiations",
+				"workflowType",
+				"availableActions"
+			]
+		},
+		"workflowType": {
+			"type": "string"
+		},
+		"dates": {
+			"type": "object",
+			"properties": {
+				"started": {
+					"type": "string"
+				},
+				"stateReached": {
+					"type": "string"
+				},
+				"execution": {
+					"type": "string"
+				},
+				"invitationSent": {
+					"type": "string"
+				},
+				"lastModified": {
+					"type": "string"
+				},
+				"lastTurnSwap": {
+					"type": "string"
+				},
+				"lastNotification": {
+					"type": "string"
+				},
+				"nextNotificationAfter": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"started",
+				"stateReached",
+				"execution",
+				"invitationSent",
+				"lastModified",
+				"lastTurnSwap",
+				"lastNotification",
+				"nextNotificationAfter"
+			]
+		},
+		"version": {
+			"type": "string"
+		},
+		"totalElections": {
+			"type": "integer"
+		},
+		"answers": {
+			"type": "object",
+			"properties": {
+				"partyA": {
+					"type": "object",
+					"properties": {
+						"jurisdiction": {
+							"type": "object",
+							"properties": {
+								"exclusive_jurisdiction": {
+									"type": "string"
+								}
+							},
+							"required": ["exclusive_jurisdiction"]
+						},
+						"process_agent": {
+							"type": "object",
+							"properties": {
+								"partyA_process_agent": {
+									"type": "string"
+								},
+								"partyB_process_agent": {
+									"type": "string"
+								},
+								"partyB_specify": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"partyA_process_agent",
+								"partyB_process_agent",
+								"partyB_specify"
+							]
+						},
+						"jury_waiver": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								}
+							},
+							"required": ["is_applicable"]
+						},
+						"execution_date": {
+							"type": "object",
+							"properties": {
+								"executionDate": {
+									"type": "string"
+								}
+							},
+							"required": ["executionDate"]
+						},
+						"umbrella_agreement_and_principal_identification": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								},
+								"language": {
+									"type": "string"
+								},
+								"principal_identification_schedule": {
+									"type": "array",
+									"items": [
+										{
+											"type": "object",
+											"properties": {
+												"principal_name": {
+													"type": "string"
+												},
+												"lei": {
+													"type": "string"
+												},
+												"additional": {
+													"type": "string"
+												}
+											},
+											"required": ["principal_name", "lei", "additional"]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"principal_name": {
+													"type": "string"
+												},
+												"lei": {
+													"type": "string"
+												},
+												"additional": {
+													"type": "string"
+												}
+											},
+											"required": ["principal_name", "lei", "additional"]
+										}
+									]
+								}
+							},
+							"required": [
+								"is_applicable",
+								"language",
+								"principal_identification_schedule"
+							]
+						},
+						"amendments": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								},
+								"specify": {
+									"type": "string"
+								}
+							},
+							"required": ["is_applicable", "specify"]
+						},
+						"parties": {
+							"type": "object",
+							"properties": {
+								"partyA_name": {
+									"type": "string"
+								},
+								"partyB_name": {
+									"type": "string"
+								}
+							},
+							"required": ["partyA_name", "partyB_name"]
+						},
+						"execution_language": {
+							"type": "object",
+							"properties": {
+								"execution_language": {
+									"type": "string"
+								}
+							},
+							"required": ["execution_language"]
+						},
+						"signature_blocks": {
+							"type": "object",
+							"properties": {
+								"partyA_standard": {
+									"type": "string"
+								},
+								"partyB_standard": {
+									"type": "string"
+								}
+							},
+							"required": ["partyA_standard", "partyB_standard"]
+						},
+						"japanese_securities_provisions": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								}
+							},
+							"required": ["is_applicable"]
+						},
+						"additional_terms": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								},
+								"specify": {
+									"type": "string"
+								}
+							},
+							"required": ["is_applicable", "specify"]
+						},
+						"collateral_transfer_agreement": {
+							"type": "object",
+							"properties": {
+								"collateral_transfer_agreement_date": {
+									"type": "string"
+								}
+							},
+							"required": ["collateral_transfer_agreement_date"]
+						}
+					},
+					"required": [
+						"jurisdiction",
+						"process_agent",
+						"jury_waiver",
+						"execution_date",
+						"umbrella_agreement_and_principal_identification",
+						"amendments",
+						"parties",
+						"execution_language",
+						"signature_blocks",
+						"japanese_securities_provisions",
+						"additional_terms",
+						"collateral_transfer_agreement"
+					]
+				},
+				"partyB": {
+					"type": "object",
+					"properties": {
+						"jurisdiction": {
+							"type": "object",
+							"properties": {
+								"exclusive_jurisdiction": {
+									"type": "string"
+								}
+							},
+							"required": ["exclusive_jurisdiction"]
+						},
+						"process_agent": {
+							"type": "object",
+							"properties": {
+								"partyA_process_agent": {
+									"type": "string"
+								},
+								"partyB_process_agent": {
+									"type": "string"
+								},
+								"partyB_specify": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"partyA_process_agent",
+								"partyB_process_agent",
+								"partyB_specify"
+							]
+						},
+						"jury_waiver": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								}
+							},
+							"required": ["is_applicable"]
+						},
+						"execution_date": {
+							"type": "object",
+							"properties": {
+								"executionDate": {
+									"type": "string"
+								}
+							},
+							"required": ["executionDate"]
+						},
+						"umbrella_agreement_and_principal_identification": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								},
+								"language": {
+									"type": "string"
+								},
+								"principal_identification_schedule": {
+									"type": "array",
+									"items": [
+										{
+											"type": "object",
+											"properties": {
+												"principal_name": {
+													"type": "string"
+												},
+												"lei": {
+													"type": "string"
+												},
+												"additional": {
+													"type": "string"
+												}
+											},
+											"required": ["principal_name", "lei", "additional"]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"principal_name": {
+													"type": "string"
+												},
+												"lei": {
+													"type": "string"
+												},
+												"additional": {
+													"type": "string"
+												}
+											},
+											"required": ["principal_name", "lei", "additional"]
+										}
+									]
+								}
+							},
+							"required": [
+								"is_applicable",
+								"language",
+								"principal_identification_schedule"
+							]
+						},
+						"amendments": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								},
+								"specify": {
+									"type": "string"
+								}
+							},
+							"required": ["is_applicable", "specify"]
+						},
+						"parties": {
+							"type": "object",
+							"properties": {
+								"partyA_name": {
+									"type": "string"
+								},
+								"partyB_name": {
+									"type": "string"
+								}
+							},
+							"required": ["partyA_name", "partyB_name"]
+						},
+						"execution_language": {
+							"type": "object",
+							"properties": {
+								"execution_language": {
+									"type": "string"
+								}
+							},
+							"required": ["execution_language"]
+						},
+						"signature_blocks": {
+							"type": "object",
+							"properties": {
+								"partyA_standard": {
+									"type": "string"
+								},
+								"partyB_standard": {
+									"type": "string"
+								}
+							},
+							"required": ["partyA_standard", "partyB_standard"]
+						},
+						"japanese_securities_provisions": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								}
+							},
+							"required": ["is_applicable"]
+						},
+						"additional_terms": {
+							"type": "object",
+							"properties": {
+								"is_applicable": {
+									"type": "string"
+								},
+								"specify": {
+									"type": "string"
+								}
+							},
+							"required": ["is_applicable", "specify"]
+						},
+						"collateral_transfer_agreement": {
+							"type": "object",
+							"properties": {
+								"collateral_transfer_agreement_date": {
+									"type": "string"
+								}
+							},
+							"required": ["collateral_transfer_agreement_date"]
+						}
+					},
+					"required": [
+						"jurisdiction",
+						"process_agent",
+						"jury_waiver",
+						"execution_date",
+						"umbrella_agreement_and_principal_identification",
+						"amendments",
+						"parties",
+						"execution_language",
+						"signature_blocks",
+						"japanese_securities_provisions",
+						"additional_terms",
+						"collateral_transfer_agreement"
+					]
+				}
+			},
+			"required": ["partyA", "partyB"]
+		},
+		"history": {
+			"type": "object",
+			"properties": {
+				"created": {
+					"type": "object",
+					"properties": {
+						"user": {
+							"type": "string"
+						},
+						"timestamp": {
+							"type": "string"
+						}
+					},
+					"required": ["user", "timestamp"]
+				},
+				"initiatedInvite": {
+					"type": "object",
+					"properties": {
+						"user": {
+							"type": "string"
+						},
+						"timestamp": {
+							"type": "string"
+						}
+					},
+					"required": ["user", "timestamp"]
+				},
+				"confirmedPartyA": {
+					"type": "object",
+					"properties": {
+						"user": {
+							"type": "string"
+						},
+						"timestamp": {
+							"type": "string"
+						}
+					},
+					"required": ["user", "timestamp"]
+				},
+				"executed": {
+					"type": "object",
+					"properties": {
+						"user": {
+							"type": "string"
+						},
+						"timestamp": {
+							"type": "string"
+						}
+					},
+					"required": ["user", "timestamp"]
+				}
+			},
+			"required": ["created", "initiatedInvite", "confirmedPartyA", "executed"]
+		},
+		"internalDocumentComments": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"created": {
+							"type": "string"
+						},
+						"type": {
+							"type": "string"
+						},
+						"user": {
+							"type": "object",
+							"properties": {
+								"userId": {
+									"type": "string"
+								},
+								"firstName": {
+									"type": "string"
+								},
+								"lastName": {
+									"type": "string"
+								},
+								"accountName": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"role": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"userId",
+								"firstName",
+								"lastName",
+								"accountName",
+								"email",
+								"role"
+							]
+						},
+						"availableActions": {
+							"type": "object",
+							"properties": {
+								"canEdit": {
+									"type": "boolean"
+								},
+								"canReply": {
+									"type": "boolean"
+								},
+								"canDelete": {
+									"type": "boolean"
+								}
+							},
+							"required": ["canEdit", "canReply", "canDelete"]
+						},
+						"state": {
+							"type": "string"
+						},
+						"fromOwnParty": {
+							"type": "boolean"
+						}
+					},
+					"required": [
+						"id",
+						"created",
+						"type",
+						"user",
+						"availableActions",
+						"state",
+						"fromOwnParty"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"created": {
+							"type": "string"
+						},
+						"type": {
+							"type": "string"
+						},
+						"user": {
+							"type": "object",
+							"properties": {
+								"userId": {
+									"type": "string"
+								},
+								"firstName": {
+									"type": "string"
+								},
+								"lastName": {
+									"type": "string"
+								},
+								"accountName": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"role": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"userId",
+								"firstName",
+								"lastName",
+								"accountName",
+								"email",
+								"role"
+							]
+						},
+						"availableActions": {
+							"type": "object",
+							"properties": {
+								"canEdit": {
+									"type": "boolean"
+								},
+								"canReply": {
+									"type": "boolean"
+								},
+								"canDelete": {
+									"type": "boolean"
+								}
+							},
+							"required": ["canEdit", "canReply", "canDelete"]
+						},
+						"state": {
+							"type": "string"
+						},
+						"fromOwnParty": {
+							"type": "boolean"
+						}
+					},
+					"required": [
+						"id",
+						"created",
+						"type",
+						"user",
+						"availableActions",
+						"state",
+						"fromOwnParty"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"created": {
+							"type": "string"
+						},
+						"type": {
+							"type": "string"
+						},
+						"user": {
+							"type": "object",
+							"properties": {
+								"userId": {
+									"type": "string"
+								},
+								"firstName": {
+									"type": "string"
+								},
+								"lastName": {
+									"type": "string"
+								},
+								"accountName": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"role": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"userId",
+								"firstName",
+								"lastName",
+								"accountName",
+								"email",
+								"role"
+							]
+						},
+						"availableActions": {
+							"type": "object",
+							"properties": {
+								"canEdit": {
+									"type": "boolean"
+								},
+								"canReply": {
+									"type": "boolean"
+								},
+								"canDelete": {
+									"type": "boolean"
+								}
+							},
+							"required": ["canEdit", "canReply", "canDelete"]
+						},
+						"state": {
+							"type": "string"
+						},
+						"fromOwnParty": {
+							"type": "boolean"
+						}
+					},
+					"required": [
+						"id",
+						"created",
+						"type",
+						"user",
+						"availableActions",
+						"state",
+						"fromOwnParty"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"created": {
+							"type": "string"
+						},
+						"type": {
+							"type": "string"
+						},
+						"user": {
+							"type": "object",
+							"properties": {
+								"userId": {
+									"type": "string"
+								},
+								"firstName": {
+									"type": "string"
+								},
+								"lastName": {
+									"type": "string"
+								},
+								"accountName": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"role": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"userId",
+								"firstName",
+								"lastName",
+								"accountName",
+								"email",
+								"role"
+							]
+						},
+						"availableActions": {
+							"type": "object",
+							"properties": {
+								"canEdit": {
+									"type": "boolean"
+								},
+								"canReply": {
+									"type": "boolean"
+								},
+								"canDelete": {
+									"type": "boolean"
+								}
+							},
+							"required": ["canEdit", "canReply", "canDelete"]
+						},
+						"state": {
+							"type": "string"
+						},
+						"fromOwnParty": {
+							"type": "boolean"
+						}
+					},
+					"required": [
+						"id",
+						"created",
+						"type",
+						"user",
+						"availableActions",
+						"state",
+						"fromOwnParty"
+					]
+				}
+			]
+		},
+		"externalDocumentComments": {
+			"type": "array",
+			"items": {}
+		},
+		"internalElectionComments": {
+			"type": "object"
+		},
+		"externalElectionComments": {
+			"type": "object"
+		}
+	},
+	"required": [
+		"partyA",
+		"partyB",
+		"participants",
+		"preset",
+		"document",
+		"workflowType",
+		"dates",
+		"version",
+		"totalElections",
+		"answers",
+		"history",
+		"internalDocumentComments",
+		"externalDocumentComments",
+		"internalElectionComments",
+		"externalElectionComments"
+	]
+}

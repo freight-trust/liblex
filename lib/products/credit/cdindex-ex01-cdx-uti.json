@@ -1,0 +1,265 @@
+{
+	"contractIdentifier": [
+		{
+			"assignedIdentifier": [
+				{
+					"identifier": {
+						"value": "56323",
+						"meta": {
+							"scheme": "http://www.fpml.org/coding-scheme/external/uti"
+						}
+					}
+				}
+			],
+			"issuer": {
+				"value": "1031234567",
+				"meta": {
+					"scheme": "http://www.fpml.org/coding-scheme/external/nsa/cftc"
+				}
+			},
+			"meta": {
+				"globalKey": "d6b43e2d"
+			}
+		}
+	],
+	"documentation": {
+		"documentationIdentification": {
+			"masterConfirmation": {
+				"masterConfirmationDate": {
+					"day": 18,
+					"month": 10,
+					"year": 2004
+				},
+				"masterConfirmationType": {
+					"value": "DJ.CDX.NA"
+				}
+			}
+		}
+	},
+	"meta": {
+		"globalKey": "fbb44c04"
+	},
+	"party": [
+		{
+			"meta": {
+				"globalKey": "9da32cae",
+				"externalKey": "party1"
+			},
+			"name": {
+				"value": "Party A"
+			},
+			"partyId": [
+				{
+					"value": "54930084UKLVMY22DS16",
+					"meta": {
+						"scheme": "http://www.fpml.org/coding-scheme/external/iso17442"
+					}
+				}
+			]
+		},
+		{
+			"meta": {
+				"globalKey": "69b7e584",
+				"externalKey": "party2"
+			},
+			"name": {
+				"value": "Party B"
+			},
+			"partyId": [
+				{
+					"value": "48750084UKLVTR22DS78",
+					"meta": {
+						"scheme": "http://www.fpml.org/coding-scheme/external/iso17442"
+					}
+				}
+			]
+		}
+	],
+	"tradableProduct": {
+		"priceNotation": [
+			{
+				"price": {
+					"cashPrice": {
+						"cashflowAmount": {
+							"amount": 16000,
+							"currency": {
+								"value": "USD"
+							},
+							"meta": {
+								"globalKey": "7ef34091"
+							}
+						}
+					}
+				}
+			},
+			{
+				"price": {
+					"fixedInterestRate": {
+						"rate": 0.006
+					}
+				}
+			}
+		],
+		"product": {
+			"contractualProduct": {
+				"economicTerms": {
+					"effectiveDate": {
+						"adjustableDate": {
+							"meta": {
+								"globalKey": "3ea0d7"
+							},
+							"unadjustedDate": {
+								"day": 23,
+								"month": 3,
+								"year": 2004
+							}
+						},
+						"meta": {
+							"globalKey": "3ea0d7"
+						}
+					},
+					"payout": {
+						"cashflow": [
+							{
+								"payoutQuantity": {
+									"assetIdentifier": {
+										"currency": {
+											"value": "USD"
+										}
+									},
+									"meta": {
+										"globalKey": "14966"
+									}
+								},
+								"meta": {
+									"globalKey": "1872a65a"
+								},
+								"payerReceiver": {
+									"payerPartyReference": {
+										"globalReference": "69b7e584",
+										"externalReference": "party2"
+									},
+									"receiverPartyReference": {
+										"globalReference": "9da32cae",
+										"externalReference": "party1"
+									}
+								}
+							}
+						],
+						"creditDefaultPayout": {
+							"generalTerms": {
+								"buyerSeller": {
+									"buyerPartyReference": {
+										"globalReference": "9da32cae",
+										"externalReference": "party1"
+									},
+									"sellerPartyReference": {
+										"globalReference": "69b7e584",
+										"externalReference": "party2"
+									}
+								},
+								"indexReferenceInformation": {
+									"indexAnnexDate": {
+										"day": 6,
+										"month": 7,
+										"year": 2004
+									},
+									"indexAnnexSource": {
+										"value": "PUBLISHER"
+									},
+									"indexName": {
+										"value": "Dow Jones CDX NA IG.2"
+									},
+									"indexSeries": 2,
+									"meta": {
+										"globalKey": "25e04401"
+									}
+								}
+							},
+							"meta": {
+								"globalKey": "91605e05"
+							},
+							"protectionTerms": [
+								{
+									"payoutQuantity": {
+										"assetIdentifier": {
+											"currency": {
+												"value": "USD"
+											}
+										},
+										"meta": {
+											"globalKey": "14966"
+										}
+									},
+									"meta": {
+										"globalKey": "14966"
+									}
+								}
+							]
+						},
+						"interestRatePayout": [
+							{
+								"meta": {
+									"globalKey": "0"
+								},
+								"payerReceiver": {
+									"payerPartyReference": {
+										"globalReference": "9da32cae",
+										"externalReference": "party1"
+									},
+									"receiverPartyReference": {
+										"globalReference": "69b7e584",
+										"externalReference": "party2"
+									}
+								}
+							}
+						]
+					},
+					"terminationDate": {
+						"adjustableDate": {
+							"meta": {
+								"globalKey": "3ec8d4"
+							},
+							"unadjustedDate": {
+								"day": 20,
+								"month": 3,
+								"year": 2009
+							}
+						},
+						"meta": {
+							"globalKey": "3ec8d4"
+						}
+					}
+				},
+				"productIdentification": {
+					"productQualifier": "CreditDefaultSwap"
+				}
+			},
+			"meta": {
+				"globalKey": "eb5c2ead"
+			}
+		},
+		"quantityNotation": [
+			{
+				"assetIdentifier": {
+					"currency": {
+						"value": "USD"
+					}
+				},
+				"quantity": {
+					"amount": 25000000
+				}
+			}
+		]
+	},
+	"tradeDate": {
+		"date": {
+			"day": 24,
+			"month": 1,
+			"year": 2005
+		},
+		"meta": {
+			"globalKey": "3ea858"
+		}
+	}
+}

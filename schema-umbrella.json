@@ -1,0 +1,1871 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"agreementDate": {
+			"type": "object",
+			"properties": {
+				"day": {
+					"type": "integer"
+				},
+				"month": {
+					"type": "integer"
+				},
+				"year": {
+					"type": "integer"
+				}
+			},
+			"required": ["day", "month", "year"]
+		},
+		"agreementType": {
+			"type": "object",
+			"properties": {
+				"governingLaw": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"publisher": {
+					"type": "string"
+				},
+				"vintage": {
+					"type": "string"
+				}
+			},
+			"required": ["governingLaw", "name", "publisher", "vintage"]
+		},
+		"contractualParty": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"value": {
+							"type": "object",
+							"properties": {
+								"meta": {
+									"type": "object",
+									"properties": {
+										"globalKey": {
+											"type": "string"
+										},
+										"externalKey": {
+											"type": "string"
+										}
+									},
+									"required": ["globalKey", "externalKey"]
+								},
+								"name": {
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										}
+									},
+									"required": ["value"]
+								},
+								"partyId": {
+									"type": "array",
+									"items": [
+										{
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										}
+									]
+								}
+							},
+							"required": ["meta", "name", "partyId"]
+						}
+					},
+					"required": ["value"]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"value": {
+							"type": "object",
+							"properties": {
+								"meta": {
+									"type": "object",
+									"properties": {
+										"globalKey": {
+											"type": "string"
+										},
+										"externalKey": {
+											"type": "string"
+										}
+									},
+									"required": ["globalKey", "externalKey"]
+								},
+								"name": {
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										}
+									},
+									"required": ["value"]
+								},
+								"partyId": {
+									"type": "array",
+									"items": [
+										{
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										}
+									]
+								}
+							},
+							"required": ["meta", "name", "partyId"]
+						}
+					},
+					"required": ["value"]
+				}
+			]
+		},
+		"otherParty": {
+			"type": "array",
+			"items": {}
+		},
+		"agreementTerms": {
+			"type": "object",
+			"properties": {
+				"agreement": {
+					"type": "object",
+					"properties": {
+						"collateralTransferAgreementElections": {
+							"type": "object",
+							"properties": {
+								"additionalBespokeTerms": {
+									"type": "string"
+								},
+								"additionalRepresentations": {
+									"type": "object",
+									"properties": {
+										"additionalRepresentation": {
+											"type": "object",
+											"properties": {
+												"customElection": {
+													"type": "string"
+												},
+												"partyElection": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"isApplicable": {
+																	"type": "boolean"
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["isApplicable", "party"]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"isApplicable": {
+																	"type": "boolean"
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["isApplicable", "party"]
+														}
+													]
+												}
+											},
+											"required": ["customElection", "partyElection"]
+										}
+									},
+									"required": ["additionalRepresentation"]
+								},
+								"addressesForTransfer": {
+									"type": "object",
+									"properties": {
+										"partyElection": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"address": {
+															"type": "string"
+														}
+													},
+													"required": ["address"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"address": {
+															"type": "string"
+														}
+													},
+													"required": ["address"]
+												}
+											]
+										}
+									},
+									"required": ["partyElection"]
+								},
+								"baseCurrency": {
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"scheme": {
+													"type": "string"
+												}
+											},
+											"required": ["scheme"]
+										}
+									},
+									"required": ["value", "meta"]
+								},
+								"calculationAndTiming": {
+									"type": "object",
+									"properties": {
+										"calculationDateLocation": {
+											"type": "object",
+											"properties": {
+												"partyElection": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"businessCenter": {
+																	"type": "object",
+																	"properties": {
+																		"value": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["value"]
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["businessCenter", "party"]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"businessCenter": {
+																	"type": "object",
+																	"properties": {
+																		"value": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["value"]
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["businessCenter", "party"]
+														}
+													]
+												}
+											},
+											"required": ["partyElection"]
+										},
+										"collateralValuationAgent": {
+											"type": "object",
+											"properties": {
+												"partyElection": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"additionalLanguage": {
+																	"type": "string"
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["additionalLanguage", "party"]
+														}
+													]
+												}
+											},
+											"required": ["partyElection"]
+										},
+										"notificationTime": {
+											"type": "object",
+											"properties": {
+												"partyElections": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"notificationTime": {
+																	"type": "object",
+																	"properties": {
+																		"businessCenter": {
+																			"type": "object",
+																			"properties": {
+																				"value": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["value"]
+																		},
+																		"hourMinuteTime": {
+																			"type": "string"
+																		}
+																	},
+																	"required": [
+																		"businessCenter",
+																		"hourMinuteTime"
+																	]
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["notificationTime", "party"]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"customNotification": {
+																	"type": "string"
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["customNotification", "party"]
+														}
+													]
+												}
+											},
+											"required": ["partyElections"]
+										}
+									},
+									"required": [
+										"calculationDateLocation",
+										"collateralValuationAgent",
+										"notificationTime"
+									]
+								},
+								"conditionsPrecedent": {
+									"type": "object",
+									"properties": {
+										"accessConditions": {
+											"type": "object",
+											"properties": {
+												"additionalTerminationEvent": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"applicableParty": {
+																	"type": "array",
+																	"items": [
+																		{
+																			"type": "string"
+																		}
+																	]
+																},
+																"name": {
+																	"type": "string"
+																}
+															},
+															"required": ["applicableParty", "name"]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"applicableParty": {
+																	"type": "array",
+																	"items": [
+																		{
+																			"type": "string"
+																		},
+																		{
+																			"type": "string"
+																		}
+																	]
+																},
+																"name": {
+																	"type": "string"
+																}
+															},
+															"required": ["applicableParty", "name"]
+														}
+													]
+												},
+												"partyElection": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"creditEventUponMerger": {
+																	"type": "boolean"
+																},
+																"forceMajeure": {
+																	"type": "boolean"
+																},
+																"illegality": {
+																	"type": "boolean"
+																},
+																"party": {
+																	"type": "string"
+																},
+																"taxEvent": {
+																	"type": "boolean"
+																},
+																"taxEventUponMerger": {
+																	"type": "boolean"
+																}
+															},
+															"required": [
+																"creditEventUponMerger",
+																"forceMajeure",
+																"illegality",
+																"party",
+																"taxEvent",
+																"taxEventUponMerger"
+															]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"creditEventUponMerger": {
+																	"type": "boolean"
+																},
+																"forceMajeure": {
+																	"type": "boolean"
+																},
+																"illegality": {
+																	"type": "boolean"
+																},
+																"party": {
+																	"type": "string"
+																},
+																"taxEvent": {
+																	"type": "boolean"
+																},
+																"taxEventUponMerger": {
+																	"type": "boolean"
+																}
+															},
+															"required": [
+																"creditEventUponMerger",
+																"forceMajeure",
+																"illegality",
+																"party",
+																"taxEvent",
+																"taxEventUponMerger"
+															]
+														}
+													]
+												}
+											},
+											"required": [
+												"additionalTerminationEvent",
+												"partyElection"
+											]
+										},
+										"conditionsPrecedentElection": {
+											"type": "boolean"
+										},
+										"customProvision": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"accessConditions",
+										"conditionsPrecedentElection",
+										"customProvision"
+									]
+								},
+								"creditSupportObligations": {
+									"type": "object",
+									"properties": {
+										"minimumTransferAmount": {
+											"type": "object",
+											"properties": {
+												"partyElection": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"amount": {
+																	"type": "object",
+																	"properties": {
+																		"amount": {
+																			"type": "integer"
+																		},
+																		"currency": {
+																			"type": "object",
+																			"properties": {
+																				"value": {
+																					"type": "string"
+																				},
+																				"meta": {
+																					"type": "object",
+																					"properties": {
+																						"scheme": {
+																							"type": "string"
+																						}
+																					},
+																					"required": ["scheme"]
+																				}
+																			},
+																			"required": ["value", "meta"]
+																		},
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		}
+																	},
+																	"required": ["amount", "currency", "meta"]
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["amount", "party"]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"party": {
+																	"type": "string"
+																},
+																"zeroAmount": {
+																	"type": "boolean"
+																}
+															},
+															"required": ["party", "zeroAmount"]
+														}
+													]
+												}
+											},
+											"required": ["partyElection"]
+										},
+										"threshold": {
+											"type": "object",
+											"properties": {
+												"partyElection": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"customElection": {
+																	"type": "string"
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["customElection", "party"]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"party": {
+																	"type": "string"
+																},
+																"zeroAmount": {
+																	"type": "boolean"
+																}
+															},
+															"required": ["party", "zeroAmount"]
+														}
+													]
+												}
+											},
+											"required": ["partyElection"]
+										}
+									},
+									"required": ["minimumTransferAmount", "threshold"]
+								},
+								"custodyArrangements": {
+									"type": "object",
+									"properties": {
+										"custodianEvent": {
+											"type": "object",
+											"properties": {
+												"endDate": {
+													"type": "object",
+													"properties": {
+														"dateOfTimelyStatement": {
+															"type": "object",
+															"properties": {
+																"offset": {
+																	"type": "object",
+																	"properties": {
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		},
+																		"period": {
+																			"type": "string"
+																		},
+																		"periodMultiplier": {
+																			"type": "integer"
+																		},
+																		"dayType": {
+																			"type": "string"
+																		}
+																	},
+																	"required": [
+																		"meta",
+																		"period",
+																		"periodMultiplier",
+																		"dayType"
+																	]
+																}
+															},
+															"required": ["offset"]
+														},
+														"daysAfterCustodianEvent": {
+															"type": "object",
+															"properties": {
+																"offset": {
+																	"type": "object",
+																	"properties": {
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		},
+																		"period": {
+																			"type": "string"
+																		},
+																		"periodMultiplier": {
+																			"type": "integer"
+																		},
+																		"dayType": {
+																			"type": "string"
+																		}
+																	},
+																	"required": [
+																		"meta",
+																		"period",
+																		"periodMultiplier",
+																		"dayType"
+																	]
+																}
+															},
+															"required": ["offset"]
+														},
+														"releaseDate": {
+															"type": "object",
+															"properties": {
+																"offset": {
+																	"type": "object",
+																	"properties": {
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		},
+																		"period": {
+																			"type": "string"
+																		},
+																		"periodMultiplier": {
+																			"type": "integer"
+																		},
+																		"dayType": {
+																			"type": "string"
+																		}
+																	},
+																	"required": [
+																		"meta",
+																		"period",
+																		"periodMultiplier",
+																		"dayType"
+																	]
+																}
+															},
+															"required": ["offset"]
+														},
+														"safekeepingPeriodExpiry": {
+															"type": "object",
+															"properties": {
+																"offset": {
+																	"type": "object",
+																	"properties": {
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"globalKey": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["globalKey"]
+																		},
+																		"period": {
+																			"type": "string"
+																		},
+																		"periodMultiplier": {
+																			"type": "integer"
+																		}
+																	},
+																	"required": [
+																		"meta",
+																		"period",
+																		"periodMultiplier"
+																	]
+																}
+															},
+															"required": ["offset"]
+														}
+													},
+													"required": [
+														"dateOfTimelyStatement",
+														"daysAfterCustodianEvent",
+														"releaseDate",
+														"safekeepingPeriodExpiry"
+													]
+												},
+												"isApplicable": {
+													"type": "boolean"
+												}
+											},
+											"required": ["endDate", "isApplicable"]
+										},
+										"custodianRisk": {
+											"type": "object",
+											"properties": {
+												"partyElection": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"qualification": {
+																	"type": "string"
+																}
+															},
+															"required": ["qualification"]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"isSpecified": {
+																	"type": "boolean"
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["isSpecified", "party"]
+														}
+													]
+												}
+											},
+											"required": ["partyElection"]
+										},
+										"isCreditSupportDocument": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"custodianEvent",
+										"custodianRisk",
+										"isCreditSupportDocument"
+									]
+								},
+								"demandsAndNotices": {
+									"type": "object",
+									"properties": {
+										"partyElection": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"address": {
+															"type": "string"
+														}
+													},
+													"required": ["address"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"address": {
+															"type": "string"
+														}
+													},
+													"required": ["address"]
+												}
+											]
+										}
+									},
+									"required": ["partyElection"]
+								},
+								"disputeResolution": {
+									"type": "object",
+									"properties": {
+										"resolutionTime": {
+											"type": "object",
+											"properties": {
+												"businessCenter": {
+													"type": "object",
+													"properties": {
+														"value": {
+															"type": "string"
+														}
+													},
+													"required": ["value"]
+												},
+												"hourMinuteTime": {
+													"type": "string"
+												}
+											},
+											"required": ["businessCenter", "hourMinuteTime"]
+										}
+									},
+									"required": ["resolutionTime"]
+								},
+								"fxHaircutCurrency": {
+									"type": "object",
+									"properties": {
+										"fxDesignatedCurrency": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												},
+												"meta": {
+													"type": "object",
+													"properties": {
+														"scheme": {
+															"type": "string"
+														}
+													},
+													"required": ["scheme"]
+												}
+											},
+											"required": ["value", "meta"]
+										},
+										"isTerminationCurrency": {
+											"type": "boolean"
+										}
+									},
+									"required": ["fxDesignatedCurrency", "isTerminationCurrency"]
+								},
+								"generalSimmElections": {
+									"type": "object",
+									"properties": {
+										"simmCalculationCurrency": {
+											"type": "object",
+											"properties": {
+												"partyElection": {
+													"type": "array",
+													"items": [
+														{
+															"type": "object",
+															"properties": {
+																"isBaseCurrency": {
+																	"type": "boolean"
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": ["isBaseCurrency", "party"]
+														},
+														{
+															"type": "object",
+															"properties": {
+																"currency": {
+																	"type": "object",
+																	"properties": {
+																		"value": {
+																			"type": "string"
+																		},
+																		"meta": {
+																			"type": "object",
+																			"properties": {
+																				"scheme": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["scheme"]
+																		}
+																	},
+																	"required": ["value", "meta"]
+																},
+																"isBaseCurrency": {
+																	"type": "boolean"
+																},
+																"party": {
+																	"type": "string"
+																}
+															},
+															"required": [
+																"currency",
+																"isBaseCurrency",
+																"party"
+															]
+														}
+													]
+												}
+											},
+											"required": ["partyElection"]
+										}
+									},
+									"required": ["simmCalculationCurrency"]
+								},
+								"identifiedCrossCurrencySwap": {
+									"type": "boolean"
+								},
+								"jurisdictionRelatedTerms": {
+									"type": "object",
+									"properties": {
+										"japaneseSecuritiesProvisions": {
+											"type": "object",
+											"properties": {
+												"isApplicable": {
+													"type": "boolean"
+												}
+											},
+											"required": ["isApplicable"]
+										}
+									},
+									"required": ["japaneseSecuritiesProvisions"]
+								},
+								"oneWayProvisions": {
+									"type": "object",
+									"properties": {
+										"isApplicable": {
+											"type": "boolean"
+										},
+										"postingParty": {
+											"type": "string"
+										}
+									},
+									"required": ["isApplicable", "postingParty"]
+								},
+								"processAgent": {
+									"type": "object",
+									"properties": {
+										"partyElection": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"isApplicable": {
+															"type": "boolean"
+														},
+														"party": {
+															"type": "string"
+														},
+														"specification": {
+															"type": "string"
+														}
+													},
+													"required": ["isApplicable", "party", "specification"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"isApplicable": {
+															"type": "boolean"
+														},
+														"party": {
+															"type": "string"
+														},
+														"specification": {
+															"type": "string"
+														}
+													},
+													"required": ["isApplicable", "party", "specification"]
+												}
+											]
+										}
+									},
+									"required": ["partyElection"]
+								},
+								"regime": {
+									"type": "object",
+									"properties": {
+										"additionalRegime": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"additionalType": {
+															"type": "string"
+														},
+														"regime": {
+															"type": "string"
+														},
+														"regimeTerms": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		},
+																		"retrospectiveEffect": {
+																			"type": "object",
+																			"properties": {
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["standardisedException"]
+																		},
+																		"simmException": {
+																			"type": "object",
+																			"properties": {
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["standardisedException"]
+																		}
+																	},
+																	"required": [
+																		"isApplicable",
+																		"party",
+																		"retrospectiveEffect",
+																		"simmException"
+																	]
+																},
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																}
+															]
+														}
+													},
+													"required": [
+														"additionalType",
+														"regime",
+														"regimeTerms"
+													]
+												}
+											]
+										},
+										"applicableRegime": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"regime": {
+															"type": "string"
+														},
+														"regimeTerms": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																},
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																}
+															]
+														}
+													},
+													"required": ["regime", "regimeTerms"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"regime": {
+															"type": "string"
+														},
+														"regimeTerms": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																},
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																}
+															]
+														}
+													},
+													"required": ["regime", "regimeTerms"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"regime": {
+															"type": "string"
+														},
+														"regimeTerms": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		},
+																		"retrospectiveEffect": {
+																			"type": "object",
+																			"properties": {
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["standardisedException"]
+																		},
+																		"simmException": {
+																			"type": "object",
+																			"properties": {
+																				"asSpecified": {
+																					"type": "string"
+																				},
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": [
+																				"asSpecified",
+																				"standardisedException"
+																			]
+																		}
+																	},
+																	"required": [
+																		"isApplicable",
+																		"party",
+																		"retrospectiveEffect",
+																		"simmException"
+																	]
+																},
+																{
+																	"type": "object",
+																	"properties": {
+																		"asSpecified": {
+																			"type": "string"
+																		},
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		},
+																		"retrospectiveEffect": {
+																			"type": "object",
+																			"properties": {
+																				"asSpecified": {
+																					"type": "string"
+																				},
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": [
+																				"asSpecified",
+																				"standardisedException"
+																			]
+																		},
+																		"simmException": {
+																			"type": "object",
+																			"properties": {
+																				"asSpecified": {
+																					"type": "string"
+																				},
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": [
+																				"asSpecified",
+																				"standardisedException"
+																			]
+																		}
+																	},
+																	"required": [
+																		"asSpecified",
+																		"isApplicable",
+																		"party",
+																		"retrospectiveEffect",
+																		"simmException"
+																	]
+																}
+															]
+														}
+													},
+													"required": ["regime", "regimeTerms"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"regime": {
+															"type": "string"
+														},
+														"regimeTerms": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																},
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																}
+															]
+														}
+													},
+													"required": ["regime", "regimeTerms"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"additionalType": {
+															"type": "string"
+														},
+														"regime": {
+															"type": "string"
+														},
+														"regimeTerms": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		},
+																		"retrospectiveEffect": {
+																			"type": "object",
+																			"properties": {
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["standardisedException"]
+																		},
+																		"simmException": {
+																			"type": "object",
+																			"properties": {
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["standardisedException"]
+																		}
+																	},
+																	"required": [
+																		"isApplicable",
+																		"party",
+																		"retrospectiveEffect",
+																		"simmException"
+																	]
+																},
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																}
+															]
+														}
+													},
+													"required": [
+														"additionalType",
+														"regime",
+														"regimeTerms"
+													]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"additionalTerms": {
+															"type": "string"
+														},
+														"additionalType": {
+															"type": "string"
+														},
+														"regime": {
+															"type": "string"
+														},
+														"regimeTerms": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		},
+																		"retrospectiveEffect": {
+																			"type": "object",
+																			"properties": {
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["standardisedException"]
+																		},
+																		"simmException": {
+																			"type": "object",
+																			"properties": {
+																				"standardisedException": {
+																					"type": "string"
+																				}
+																			},
+																			"required": ["standardisedException"]
+																		}
+																	},
+																	"required": [
+																		"isApplicable",
+																		"party",
+																		"retrospectiveEffect",
+																		"simmException"
+																	]
+																},
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																}
+															]
+														}
+													},
+													"required": [
+														"additionalTerms",
+														"additionalType",
+														"regime",
+														"regimeTerms"
+													]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"regime": {
+															"type": "string"
+														},
+														"regimeTerms": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																},
+																{
+																	"type": "object",
+																	"properties": {
+																		"isApplicable": {
+																			"type": "string"
+																		},
+																		"party": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["isApplicable", "party"]
+																}
+															]
+														}
+													},
+													"required": ["regime", "regimeTerms"]
+												}
+											]
+										}
+									},
+									"required": ["additionalRegime", "applicableRegime"]
+								},
+								"sensitivityMethodologies": {
+									"type": "object",
+									"properties": {
+										"sensitivityToCommodity": {
+											"type": "object",
+											"properties": {
+												"customMethodology": {
+													"type": "string"
+												}
+											},
+											"required": ["customMethodology"]
+										},
+										"sensitivityToEquity": {
+											"type": "object",
+											"properties": {
+												"customMethodology": {
+													"type": "string"
+												}
+											},
+											"required": ["customMethodology"]
+										}
+									},
+									"required": ["sensitivityToCommodity", "sensitivityToEquity"]
+								},
+								"terminationCurrencyAmendment": {
+									"type": "object",
+									"properties": {
+										"effectiveDate": {
+											"type": "object",
+											"properties": {
+												"date": {
+													"type": "object",
+													"properties": {
+														"day": {
+															"type": "integer"
+														},
+														"month": {
+															"type": "integer"
+														},
+														"year": {
+															"type": "integer"
+														}
+													},
+													"required": ["day", "month", "year"]
+												}
+											},
+											"required": ["date"]
+										},
+										"isApplicable": {
+											"type": "boolean"
+										},
+										"partyElection": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"currency": {
+															"type": "object",
+															"properties": {
+																"value": {
+																	"type": "string"
+																},
+																"meta": {
+																	"type": "object",
+																	"properties": {
+																		"scheme": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["scheme"]
+																}
+															},
+															"required": ["value", "meta"]
+														},
+														"isSpecified": {
+															"type": "boolean"
+														},
+														"party": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "string"
+																}
+															]
+														}
+													},
+													"required": ["currency", "isSpecified", "party"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"currency": {
+															"type": "object",
+															"properties": {
+																"value": {
+																	"type": "string"
+																},
+																"meta": {
+																	"type": "object",
+																	"properties": {
+																		"scheme": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["scheme"]
+																}
+															},
+															"required": ["value", "meta"]
+														},
+														"isSpecified": {
+															"type": "boolean"
+														},
+														"party": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "string"
+																}
+															]
+														}
+													},
+													"required": ["currency", "isSpecified", "party"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"currency": {
+															"type": "object",
+															"properties": {
+																"value": {
+																	"type": "string"
+																},
+																"meta": {
+																	"type": "object",
+																	"properties": {
+																		"scheme": {
+																			"type": "string"
+																		}
+																	},
+																	"required": ["scheme"]
+																}
+															},
+															"required": ["value", "meta"]
+														},
+														"isSpecified": {
+															"type": "boolean"
+														},
+														"party": {
+															"type": "array",
+															"items": [
+																{
+																	"type": "string"
+																},
+																{
+																	"type": "string"
+																}
+															]
+														}
+													},
+													"required": ["currency", "isSpecified", "party"]
+												}
+											]
+										}
+									},
+									"required": ["effectiveDate", "isApplicable", "partyElection"]
+								}
+							},
+							"required": [
+								"additionalBespokeTerms",
+								"additionalRepresentations",
+								"addressesForTransfer",
+								"baseCurrency",
+								"calculationAndTiming",
+								"conditionsPrecedent",
+								"creditSupportObligations",
+								"custodyArrangements",
+								"demandsAndNotices",
+								"disputeResolution",
+								"fxHaircutCurrency",
+								"generalSimmElections",
+								"identifiedCrossCurrencySwap",
+								"jurisdictionRelatedTerms",
+								"oneWayProvisions",
+								"processAgent",
+								"regime",
+								"sensitivityMethodologies",
+								"terminationCurrencyAmendment"
+							]
+						}
+					},
+					"required": ["collateralTransferAgreementElections"]
+				},
+				"relatedAgreements": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"legalAgreement": {
+									"type": "object",
+									"properties": {
+										"agreementDate": {
+											"type": "object",
+											"properties": {
+												"day": {
+													"type": "integer"
+												},
+												"month": {
+													"type": "integer"
+												},
+												"year": {
+													"type": "integer"
+												}
+											},
+											"required": ["day", "month", "year"]
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"globalKey": {
+													"type": "string"
+												}
+											},
+											"required": ["globalKey"]
+										}
+									},
+									"required": ["agreementDate", "meta"]
+								}
+							},
+							"required": ["legalAgreement"]
+						}
+					]
+				},
+				"umbrellaAgreement": {
+					"type": "object",
+					"properties": {
+						"isApplicable": {
+							"type": "boolean"
+						},
+						"language": {
+							"type": "string"
+						},
+						"parties": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"entityId": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"value": {
+															"type": "string"
+														}
+													},
+													"required": ["value"]
+												}
+											]
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"globalKey": {
+													"type": "string"
+												}
+											},
+											"required": ["globalKey"]
+										},
+										"name": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										},
+										"terms": {
+											"type": "string"
+										}
+									},
+									"required": ["entityId", "meta", "name", "terms"]
+								},
+								{
+									"type": "object",
+									"properties": {
+										"entityId": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"value": {
+															"type": "string"
+														}
+													},
+													"required": ["value"]
+												}
+											]
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"globalKey": {
+													"type": "string"
+												}
+											},
+											"required": ["globalKey"]
+										},
+										"name": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										},
+										"terms": {
+											"type": "string"
+										}
+									},
+									"required": ["entityId", "meta", "name", "terms"]
+								}
+							]
+						}
+					},
+					"required": ["isApplicable", "language", "parties"]
+				}
+			},
+			"required": ["agreement", "relatedAgreements", "umbrellaAgreement"]
+		},
+		"meta": {
+			"type": "object",
+			"properties": {
+				"globalKey": {
+					"type": "string"
+				}
+			},
+			"required": ["globalKey"]
+		}
+	},
+	"required": [
+		"agreementDate",
+		"agreementType",
+		"contractualParty",
+		"otherParty",
+		"agreementTerms",
+		"meta"
+	]
+}

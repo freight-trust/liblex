@@ -1,0 +1,391 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"agreementDate": {
+			"type": "object",
+			"properties": {
+				"day": {
+					"type": "integer"
+				},
+				"month": {
+					"type": "integer"
+				},
+				"year": {
+					"type": "integer"
+				}
+			},
+			"required": ["day", "month", "year"]
+		},
+		"agreementType": {
+			"type": "object",
+			"properties": {
+				"governingLaw": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"publisher": {
+					"type": "string"
+				},
+				"vintage": {
+					"type": "string"
+				}
+			},
+			"required": ["governingLaw", "name", "publisher", "vintage"]
+		},
+		"contractualParty": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"value": {
+							"type": "object",
+							"properties": {
+								"meta": {
+									"type": "object",
+									"properties": {
+										"globalKey": {
+											"type": "string"
+										},
+										"externalKey": {
+											"type": "string"
+										}
+									},
+									"required": ["globalKey", "externalKey"]
+								},
+								"name": {
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										}
+									},
+									"required": ["value"]
+								},
+								"partyId": {
+									"type": "array",
+									"items": [
+										{
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										}
+									]
+								}
+							},
+							"required": ["meta", "name", "partyId"]
+						}
+					},
+					"required": ["value"]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"value": {
+							"type": "object",
+							"properties": {
+								"meta": {
+									"type": "object",
+									"properties": {
+										"globalKey": {
+											"type": "string"
+										},
+										"externalKey": {
+											"type": "string"
+										}
+									},
+									"required": ["globalKey", "externalKey"]
+								},
+								"name": {
+									"type": "object",
+									"properties": {
+										"value": {
+											"type": "string"
+										}
+									},
+									"required": ["value"]
+								},
+								"partyId": {
+									"type": "array",
+									"items": [
+										{
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										}
+									]
+								}
+							},
+							"required": ["meta", "name", "partyId"]
+						}
+					},
+					"required": ["value"]
+				}
+			]
+		},
+		"otherParty": {
+			"type": "array",
+			"items": {}
+		},
+		"agreementTerms": {
+			"type": "object",
+			"properties": {
+				"agreement": {
+					"type": "object",
+					"properties": {
+						"securityAgreementElections": {
+							"type": "object",
+							"properties": {
+								"additionalAmendments": {
+									"type": "string"
+								},
+								"additionalBespokeTerms": {
+									"type": "string"
+								},
+								"jurisdictionRelatedTerms": {
+									"type": "object",
+									"properties": {
+										"exclusiveJurisdiction": {
+											"type": "boolean"
+										},
+										"japaneseSecuritiesProvisions": {
+											"type": "object",
+											"properties": {
+												"isApplicable": {
+													"type": "boolean"
+												}
+											},
+											"required": ["isApplicable"]
+										},
+										"juryWaiver": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"exclusiveJurisdiction",
+										"japaneseSecuritiesProvisions",
+										"juryWaiver"
+									]
+								},
+								"processAgent": {
+									"type": "object",
+									"properties": {
+										"partyElection": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"isApplicable": {
+															"type": "boolean"
+														},
+														"party": {
+															"type": "string"
+														},
+														"specification": {
+															"type": "string"
+														}
+													},
+													"required": ["isApplicable", "party", "specification"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"isApplicable": {
+															"type": "boolean"
+														},
+														"party": {
+															"type": "string"
+														}
+													},
+													"required": ["isApplicable", "party"]
+												}
+											]
+										}
+									},
+									"required": ["partyElection"]
+								}
+							},
+							"required": [
+								"additionalAmendments",
+								"additionalBespokeTerms",
+								"jurisdictionRelatedTerms",
+								"processAgent"
+							]
+						}
+					},
+					"required": ["securityAgreementElections"]
+				},
+				"relatedAgreements": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"legalAgreement": {
+									"type": "object",
+									"properties": {
+										"agreementDate": {
+											"type": "object",
+											"properties": {
+												"day": {
+													"type": "integer"
+												},
+												"month": {
+													"type": "integer"
+												},
+												"year": {
+													"type": "integer"
+												}
+											},
+											"required": ["day", "month", "year"]
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"globalKey": {
+													"type": "string"
+												}
+											},
+											"required": ["globalKey"]
+										}
+									},
+									"required": ["agreementDate", "meta"]
+								}
+							},
+							"required": ["legalAgreement"]
+						}
+					]
+				},
+				"umbrellaAgreement": {
+					"type": "object",
+					"properties": {
+						"isApplicable": {
+							"type": "boolean"
+						},
+						"language": {
+							"type": "string"
+						},
+						"parties": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"entityId": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"value": {
+															"type": "string"
+														}
+													},
+													"required": ["value"]
+												}
+											]
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"globalKey": {
+													"type": "string"
+												}
+											},
+											"required": ["globalKey"]
+										},
+										"name": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										},
+										"terms": {
+											"type": "string"
+										}
+									},
+									"required": ["entityId", "meta", "name", "terms"]
+								},
+								{
+									"type": "object",
+									"properties": {
+										"entityId": {
+											"type": "array",
+											"items": [
+												{
+													"type": "object",
+													"properties": {
+														"value": {
+															"type": "string"
+														}
+													},
+													"required": ["value"]
+												}
+											]
+										},
+										"meta": {
+											"type": "object",
+											"properties": {
+												"globalKey": {
+													"type": "string"
+												}
+											},
+											"required": ["globalKey"]
+										},
+										"name": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": ["value"]
+										},
+										"terms": {
+											"type": "string"
+										}
+									},
+									"required": ["entityId", "meta", "name", "terms"]
+								}
+							]
+						}
+					},
+					"required": ["isApplicable", "language", "parties"]
+				}
+			},
+			"required": ["agreement", "relatedAgreements", "umbrellaAgreement"]
+		},
+		"meta": {
+			"type": "object",
+			"properties": {
+				"globalKey": {
+					"type": "string"
+				}
+			},
+			"required": ["globalKey"]
+		}
+	},
+	"required": [
+		"agreementDate",
+		"agreementType",
+		"contractualParty",
+		"otherParty",
+		"agreementTerms",
+		"meta"
+	]
+}
